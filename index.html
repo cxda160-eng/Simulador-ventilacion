@@ -157,6 +157,8 @@ details ul{padding-left:18px;margin:6px 0}
       <div class="rowv"><span>Resistencia total, con tubo (cmH₂O/L/s)</span><b id="lRV"></b></div><input type="range" id="lR" min="30" max="300" step="5">
     </details>
   </div>
+  <div class="rowv"><span>Fuga alrededor del tubo</span><b id="lkV"></b></div>
+  <input type="range" id="lk" min="0" max="0.6" step="0.05">
   <div class="rowv"><span>Esfuerzo respiratorio propio</span><b id="drvV"></b></div>
   <input type="range" id="drv" min="0" max="1" step="0.05">
   <label class="tg" style="margin-top:8px"><input type="checkbox" id="ino"> Óxido nítrico inhalado 20 ppm</label>
@@ -236,6 +238,12 @@ details ul{padding-left:18px;margin:6px 0}
     <p>Programás un VT objetivo y un PIP máximo. El respirador ajusta la presión respiración por respiración según el VT medido. Si la compliance mejora (surfactante, reclutamiento), baja solo la presión. Si el VT no se alcanza con el PIP máximo, aparece la alarma «VT bajo». VT habitual: 4–6 ml/kg (DBP 6–8).</p></details>
   <details><summary>VAFO</summary>
     <p>Oxigenación: MAP y FiO₂. Ventilación: DCO₂ = f × VT². Con VG se programa el VThf y la amplitud se ajusta sola; sin VG se programa la amplitud. Con VG, subir el VThf es la palanca más potente. Sin VG, bajar la frecuencia aumenta el volumen entregado.</p></details>
+  <details><summary>VAFO: frecuencia alta, tubo y fuga</summary>
+    <ul><li><b>Límite del equipo:</b> la amplitud que el oscilador logra generar cae a medida que sube la frecuencia. A 18 Hz puede quedar en ~25 cmH₂O aunque la amplitud máxima programada sea 40, y aparece «VT hf no alcanzado».</li>
+    <li><b>Tubo:</b> cuanto más fino el tubo y más alta la frecuencia, menos oscilación llega al pulmón (con tubo 2,5 a 18 Hz llega ~60 %).</li>
+    <li><b>Fuga:</b> con fuga alrededor del tubo, el VThf medido subestima el real. El VG regula sobre ese valor, así que el pulmón puede recibir más volumen del que muestra la pantalla.</li>
+    <li><b>Qué hacer:</b> bajar la frecuencia (15, después 13–14 Hz), revisar la posición y el tamaño del tubo, y recién después subir el VThf o la amplitud máxima.</li>
+    <li>En algunos equipos el VThf se programa en <b>mL totales</b>: el simulador muestra la equivalencia debajo del valor.</li></ul></details>
 </section>
 <p class="foot">Modelo docente simplificado (pulmón de un compartimento, gases calculados a partir de la ventilación alveolar o del DCO₂). No representa un equipo comercial en particular ni reemplaza el juicio clínico.</p>
 </main>
@@ -268,6 +276,10 @@ const CASES={
     kg:3.2,cpk:1,R:50,mOpen:4,mW:1.5,mOver:11,sh0:.1,pphn:.02,vdk:2.2,vco2:7,hco3:24,drive:0,rrP:40,bp:45,
     goal:{co2:[40,50],sat:[95,100],vt:[4,6],vthf:[1.5,2.5],fio2:40},
     start:{mode:'ac',peep:5,pip:14,ti:.4,rr:30,fio2:40,vt:5,pmax:25,term:15,hfMap:10,f:10,amp:20,vthf:2,ampMax:40,ie:1,vg:false}},
+  vn:{n:'Prematuro 900 g · VAFO-VG a 18 Hz · VT hf no alcanzado',desc:'<b>Prematuro de 900 g con EMH, en VAFO con VG.</b> Programado: VThf 1,2 mL, 18 Hz, I:E 1:1, MAP 10, amplitud máxima 40, FiO₂ 60 %. Tubo 2,5 con fuga del 30 %. Aparece «VT hf no alcanzado» con ΔPhf ~26, aunque la máxima sea 40: a 18 Hz el equipo no genera más amplitud y el tubo atenúa la oscilación. Objetivo: llegar al VThf y bajar la pCO₂ y la FiO₂.',
+    kg:.9,cpk:.45,R:150,mOpen:9.5,mW:1.1,mOver:14,sh0:.65,pphn:.03,vdk:2.8,vco2:6,hco3:21,drive:.2,rrP:50,bp:32,leak:.3,
+    goal:{co2:[45,60],sat:[90,95],vt:[4,6],vthf:[1.2,2.5],fio2:40},
+    start:{mode:'hfo',peep:5,pip:17,ti:.3,rr:40,fio2:60,vt:4.5,pmax:25,term:15,hfMap:10,f:18,amp:26,vthf:1.33,ampMax:40,ie:1,vg:true}},
   libre:{n:'Paciente configurable',desc:'',
     kg:1.5,cpk:.8,R:100,mOpen:6,mW:1.5,mOver:13,sh0:.25,pphn:.05,vdk:2.5,vco2:6.5,hco3:24,drive:.3,rrP:50,bp:38,
     goal:{co2:[40,55],sat:[90,95],vt:[4,6],vthf:[1.5,2.5],fio2:40},
@@ -284,7 +296,7 @@ function newState(){
      inSeg:false,seg:0,segSup:false,vRef:0,segPk:0,lastBreath:0,breaths:[],
      curLoop:[],loop:[],pip:0,pipCur:0,map:0,autoPeep:0,vti:0,vtSup:0,
      patPh:Math.random(),patT:0,effort:false,
-     hfPh:0,hfVmin:1e9,hfVmax:-1e9,hfVT:0,ampEff:null,vEma:0,
+     hfPh:0,hfVmin:1e9,hfVmax:-1e9,hfVT:0,hfVTm:0,hfLim:false,ampEff:null,vEma:0,pY:0,mapY:0,
      rec:.5,sampAcc:0};
   G={co2:50,o2:60,tSim:0,okFor:0,lastGas:null};
 }
@@ -303,6 +315,10 @@ function odx(){ // sobredistensión 0..1
   const byPip=S.mode==='hfo'?0:Math.max(0,M.pip-(P.mOver+14))/8;
   return clamp(byMap+byPip,0,1);
 }
+function tubo(){return P.kg<1?2.5:P.kg<2?3:3.5}
+function devMax(){return Math.min(90,2000/Math.pow(S.f,1.5))} // amplitud máxima que el equipo logra a esa frecuencia
+function hfTF(){const fc=tubo()===2.5?14:tubo()===3?18:22;return 1/Math.sqrt(1+Math.pow(S.f/fc,2))} // atenuación por tubo
+function leak(){return S.mode==='cpap'||S.mode==='nippv'?0:(P.leak||0)}
 function Rml(){return (P.R*(ev.obs?5:1))/1000} // cmH2O/(ml/s)
 const sev=p=>{const q=p*26.8/20;return 100/(23400/(q*q*q+150*q)+1)}; // Severinghaus con Hb fetal (P50 ~20)
 function pH(){return 6.1+Math.log10(P.hco3/(.03*G.co2))}
@@ -362,15 +378,19 @@ function step(dt){
     M.hfPh+=S.f*dt;
     if(M.hfPh>=1){M.hfPh-=1;
       M.hfVT=Math.max(0,M.hfVmax-M.hfVmin);M.hfVmin=1e9;M.hfVmax=-1e9;
-      if(S.vg){const r=S.vthf*P.kg/Math.max(M.hfVT,.05);M.ampEff=clamp(M.ampEff*(1+.35*(r-1)),4,S.ampMax)}
-      else M.ampEff=S.amp;
+      M.hfVTm=M.hfVT*(1-.6*leak()); // lo que mide el sensor (la fuga se pierde en la espiración)
+      const lim=Math.min(S.ampMax,devMax());
+      if(S.vg){const r=S.vthf*P.kg/Math.max(M.hfVTm,.05);M.ampEff=clamp(M.ampEff*(1+.35*(r-1)),4,lim);
+        M.hfLim=M.hfVTm<S.vthf*P.kg*.9&&M.ampEff>=lim-.5}
+      else{M.ampEff=Math.min(S.amp,devMax());M.hfLim=false}
       M.loop=M.curLoop;M.curLoop=[];
     }
     if(M.ampEff==null)M.ampEff=S.vg?Math.min(S.ampMax,20):S.amp;
     const fi=1/(1+S.ie),ph=M.hfPh;
     let w=ph<fi?Math.sin(Math.PI*ph/fi):-Math.sin(Math.PI*(ph-fi)/(1-fi));
     w-=(2/Math.PI)*(2*fi-1);
-    target=S.hfMap+M.ampEff/2*w;
+    M.pY=(S.hfMap+M.ampEff/2*w)*air;               // presión en la pieza en Y (lo que muestra el monitor)
+    target=S.hfMap*(1-.15*leak())+M.ampEff/2*w*hfTF(); // presión que llega a la vía aérea distal
     M.paw=target*air;
   }else{
     // máquina de estados convencional
@@ -394,12 +414,12 @@ function step(dt){
     }
     if(nonInv)target*=.9;
     const tau=M.ph==='insp'?.03:.02;
-    M.paw+=(target*air-M.paw)*Math.min(1,dt/tau);
+    M.paw+=(target*air-M.paw)*Math.min(1,dt/tau);M.pY=M.paw;
   }
   // --- mecánica pulmonar
   const q=(M.paw-M.V/C-pmus)/R;
   M.Q=q;M.V+=q*dt;
-  M.map+=(M.paw-M.map)*dt/2.5;
+  M.map+=(M.paw-M.map)*dt/2.5;M.mapY+=(M.pY-M.mapY)*dt/2.5;
   if(M.ph==='insp')M.pipCur=Math.max(M.pipCur,M.paw);
   // --- segmentación de respiraciones (convencional)
   if(S.mode!=='hfo'){
@@ -407,12 +427,12 @@ function step(dt){
       if(M.curLoop.length>10)M.loop=M.curLoop;M.curLoop=[]}
     if(M.inSeg){M.seg+=Math.max(0,q)*dt;if(M.ph==='insp')M.segSup=true;M.segPip=Math.max(M.segPip,M.paw);
       if(q<-1.2){M.inSeg=false;
-        if(M.seg>.25){M.breaths.push({t:M.t,vt:M.seg,sup:M.segSup});M.lastBreath=M.t;M.vti=M.seg;
-          if(M.segSup){M.vtSup=M.seg;M.pip=Math.max(M.segPip,S.peep);
+        if(M.seg>.25){M.breaths.push({t:M.t,vt:M.seg,sup:M.segSup});M.lastBreath=M.t;M.vti=M.seg*(1-.6*leak());
+          if(M.segSup){M.vtSup=M.seg*(1-.6*leak());M.pip=Math.max(M.segPip,S.peep);
             if(S.vg&&(S.mode==='ac'||S.mode==='simv'||S.mode==='psv')){
-              const tgt=S.vt*P.kg,cur=dPset();
-              let nd=cur+clamp(cur*(tgt/Math.max(M.seg,.05)-1)*.6,-3,3);
-              const mx=S.pmax-S.peep;M.vgLim=nd>mx+.01&&M.seg<tgt*.9;M.dPvg=clamp(nd,2,mx);
+              const tgt=S.vt*P.kg,cur=dPset(),vm=M.seg*(1-.6*leak());
+              let nd=cur+clamp(cur*(tgt/Math.max(vm,.05)-1)*.6,-3,3);
+              const mx=S.pmax-S.peep;M.vgLim=nd>mx+.01&&vm<tgt*.9;M.dPvg=clamp(nd,2,mx);
             }}
           if(M.breaths.length>80)M.breaths.splice(0,M.breaths.length-80);}
       }}
@@ -426,7 +446,7 @@ function step(dt){
   // muestreo de curvas
   M.sampAcc+=dt;const dts=win/N;
   while(M.sampAcc>=dts){M.sampAcc-=dts;
-    buf.p[buf.i]=M.paw;buf.f[buf.i]=q*.06;buf.v[buf.i]=S.mode==='hfo'?M.V-M.vEma:(M.inSeg||M.ph==='insp'?M.V-M.vRef:Math.max(0,M.V-M.vRef));
+    buf.p[buf.i]=M.pY;buf.f[buf.i]=q*.06;buf.v[buf.i]=S.mode==='hfo'?M.V-M.vEma:(M.inSeg||M.ph==='insp'?M.V-M.vRef:Math.max(0,M.V-M.vRef));
     buf.i=(buf.i+1)%N;}
 }
 function physio(dtp){ // dtp en segundos del paciente
@@ -451,7 +471,7 @@ const DEF={
   hfMap:{l:'MAP',u:'cmH₂O',st:1,mn:5,mx:25,d:0},
   f:{l:'Frecuencia',u:'Hz',st:1,mn:5,mx:20,d:0},
   amp:{l:'Amplitud',u:'cmH₂O',st:2,mn:6,mx:60,d:0},
-  vthf:{l:'VThf objetivo',u:'ml/kg',st:.1,mn:.8,mx:3.5,d:1},
+  vthf:{l:'VThf objetivo',u:'ml/kg',st:.05,mn:.8,mx:3.5,d:2,fmt:v=>fx(v,2)+`<small style="display:block;font-size:11px;font-weight:600;opacity:.7">= ${fx(v*P.kg,2)} mL</small>`},
   ampMax:{l:'Amplitud máx',u:'cmH₂O',st:5,mn:10,mx:70,d:0},
   ie:{l:'I:E',u:'',st:1,mn:1,mx:2,d:0,fmt:v=>'1:'+v}
 };
@@ -491,7 +511,7 @@ function renderSteps(){
       S[k]=+S[k].toFixed(3);
       if(k==='pip'||k==='peep'){if(S.pip<S.peep+4)S.pip=S.peep+4;M.dPvg=S.vg?M.dPvg:null}
       if(k==='amp'&&!S.vg)M.ampEff=S.amp;
-      $('sv-'+k).textContent=d.fmt?d.fmt(S[k]):fx(S[k],d.d);
+      $('sv-'+k).innerHTML=d.fmt?d.fmt(S[k]):fx(S[k],d.d);
       if(k==='pip'||k==='peep')['pip','peep'].forEach(x=>{const e=$('sv-'+x);if(e)e.textContent=fx(S[x],0)});
       el.classList.add('hl');setTimeout(()=>el.classList.remove('hl'),300)};
     b.onclick=doit;
@@ -510,7 +530,7 @@ $('modes').querySelectorAll('button').forEach(b=>b.onclick=()=>{
 $('vg').onchange=()=>{S.vg=$('vg').checked;M.dPvg=null;if(S.mode==='hfo')M.ampEff=S.vg?Math.min(S.ampMax,M.ampEff||20):S.amp;renderSteps()};
 
 /* ============ CASOS / UI ============ */
-$('caseSel').innerHTML=['libre','emh','sam','htpp','dbp','sano'].map(k=>`<option value="${k}">${k==='libre'?'⚙️ ':''}${CASES[k].n}</option>`).join('');
+$('caseSel').innerHTML=['libre','vn','emh','sam','htpp','dbp','sano'].map(k=>`<option value="${k}">${k==='libre'?'⚙️ ':''}${CASES[k].n}</option>`).join('');
 function loadCase(k){
   C0=k;P=JSON.parse(JSON.stringify(CASES[k]));S=JSON.parse(JSON.stringify(P.start));
   Object.keys(ev).forEach(e=>ev[e]=false);ev.ino=false;$('ino').checked=false;
@@ -520,6 +540,7 @@ function loadCase(k){
   $('libre').style.display=k==='libre'?'block':'none';
   if(k==='libre'){applyLibre(true)}
   $('drv').value=P.drive;drvLbl();
+  if(P.leak==null)P.leak=.05;$('lk').value=P.leak;$('lkV').textContent=fx(P.leak*100)+' %';
   setWin(S.mode==='hfo'?1.5:6);
   renderSteps();
   // precalentamiento: 10 s de mecánica y gases en equilibrio
@@ -533,6 +554,7 @@ function loadCase(k){
 $('caseSel').onchange=()=>loadCase($('caseSel').value);
 $('bReset').onclick=()=>loadCase(C0);
 function drvLbl(){const v=+$('drv').value;$('drvV').textContent=v<.05?'Sin esfuerzo (sedado)':v<.35?'Débil':v<.7?'Moderado':'Vigoroso'}
+$('lk').oninput=()=>{P.leak=+$('lk').value;$('lkV').textContent=fx(P.leak*100)+' %'};
 $('drv').oninput=()=>{P.drive=+$('drv').value;drvLbl()};
 /* ---- Paciente configurable: peso, EG, días de vida y patología ---- */
 const PAT={
@@ -586,7 +608,7 @@ $('bFwd').onclick=()=>{for(let i=0;i<20;i++)physio(30);G.co2=co2ss();G.o2=o2ss()
 
 /* ============ GASES Y PISTAS ============ */
 function satNow(){return sev(G.o2)}
-function vtKgNow(){return S.mode==='hfo'?M.hfVT/P.kg:((S.mode==='cpap'?M.vti:M.vtSup)/P.kg)}
+function vtKgNow(){return S.mode==='hfo'?M.hfVTm/P.kg:((S.mode==='cpap'?M.vti:M.vtSup)/P.kg)}
 $('bGas').onclick=()=>{
   const ph=pH(),co2=G.co2,o2=G.o2,hco3=P.hco3,eb=.93*(hco3-24.4+14.8*(ph-7.4)),g=P.goal;
   const cls=(v,lo,hi)=>v>hi?'hi':v<lo?'lo':'okv';
@@ -610,6 +632,7 @@ function tips(){
   if(!hf&&S.mode!=='cpap'){
     if(te<3*tau)out.push(['w',`Te ${fx(te,2)} s es menor que 3τ (${fx(3*tau,2)} s): atrapamiento aéreo${M.autoPeep>.5?` (auto-PEEP ~${fx(M.autoPeep,1)} cmH₂O)`:''}. Bajá la FR o el Ti para alargar la espiración.`]);
     const vk=vtKgNow();
+    if(leak()>.3)out.push(['w',`Fuga del ${fx(leak()*100)} %: el VT espirado subestima el real (con VG, el respirador sube la presión para compensar).`]);
     if(vk>g.vt[1]+.5)out.push(['w',`VT ${fx(vk,1)} ml/kg: por encima de ${g.vt[1]} ml/kg (volutrauma). ${S.vg?'Bajá el VT objetivo.':'Bajá el PIP.'}`]);
     if(co2>g.co2[1]){
       if(vk<(g.vt[0]+g.vt[1])/2)out.push(['',`pCO₂ alta con VT bajo (${fx(vk,1)} ml/kg): ${S.vg?'subí el VT objetivo (y revisá que el PIP máx alcance)':'subí el PIP'}${M.rec<.6?' y considerá subir la PEEP para reclutar: con más pulmón abierto, el mismo ΔP da más volumen':''}.`]);
@@ -620,8 +643,11 @@ function tips(){
   }
   if(hf){
     const d=dco2c(),vk=vtKgNow();
-    if(S.vg&&M.ampEff>=S.ampMax-.5)out.push(['b','La amplitud está al tope y no llega al VThf: subí la amplitud máxima o bajá la frecuencia 1–2 Hz.']);
-    if(co2>g.co2[1])out.push(['',S.vg?`pCO₂ alta: subí el VThf de a 0,1–0,2 ml/kg (actual ${fx(vk,2)}; DCO₂ ${fx(d)}).`:`pCO₂ alta: subí la amplitud de a 2–4 cmH₂O o bajá la frecuencia (sin VG, eso aumenta el volumen).`]);
+    const lim=devMax();
+    if(S.vg&&M.hfLim&&lim<S.ampMax-.5)out.push(['b',`VT hf no alcanzado: a ${fx(S.f)} Hz el equipo solo genera ~${fx(lim)} cmH₂O de ΔPhf, aunque la amplitud máxima sea ${fx(S.ampMax)}. Además, el tubo de ${fx(tubo(),1)} atenúa la oscilación (llega ~${fx(hfTF()*100)} % al pulmón). Bajá la frecuencia: a 15 Hz el límite sube a ~${fx(2000/Math.pow(15,1.5))} y llega más volumen.`]);
+    else if(S.vg&&M.hfLim)out.push(['b','VT hf no alcanzado con la amplitud máxima: subí la amplitud máxima o bajá la frecuencia 1–2 Hz.']);
+    if(leak()>.25)out.push(['w',`Fuga del ${fx(leak()*100)} %: el VThf medido subestima el real y el VG regula sobre un valor erróneo. Revisá la posición del tubo y considerá cambiarlo por uno más grande.`]);
+    if(co2>g.co2[1]&&!M.hfLim)out.push(['',S.vg?`pCO₂ alta: subí el VThf de a 0,1–0,2 ml/kg (medido ${fx(vk,2)} ml/kg; DCO₂ corr ${fx(S.f*vk*vk)}).`:`pCO₂ alta: subí la amplitud de a 2–4 cmH₂O o bajá la frecuencia (sin VG, eso aumenta el volumen).`]);
     if(co2<g.co2[0])out.push(['w',S.vg?'pCO₂ baja: con VG, bajá el VThf o la frecuencia.':'pCO₂ baja: bajá la amplitud o subí la frecuencia.']);
   }
   if(sat<g.sat[0]){
@@ -699,10 +725,12 @@ function drawLoop(){
 function numCell(t,v,u,cls=''){return `<div><div class="t">${t}</div><div class="v ${cls}">${v}<small> ${u}</small></div></div>`}
 function paintNums(){
   const hf=S.mode==='hfo',C=lungC();let h='';
-  if(hf){const d=dco2c(),vk=M.hfVT/P.kg;
-    h=numCell('MAP',fx(M.map,1),'cmH₂O')+numCell('Amplitud',fx(M.ampEff||S.amp),'cmH₂O',S.vg&&M.ampEff>=S.ampMax-.5?'b':'')+numCell('Frecuencia',fx(S.f),'Hz')+
-      numCell('VThf',fx(M.hfVT,2),'ml')+numCell('VThf/kg',fx(vk,2),'ml/kg',vk>2.5?'w':'')+numCell('DCO₂ corr',fx(d),'ml²/kg²·s')+
-      numCell('DCO₂',fx(S.f*M.hfVT*M.hfVT,1),'ml²/s')+numCell('I:E','1:'+S.ie,'');
+  if(hf){const vm=M.hfVTm,vk=vm/P.kg,dm=S.f*vm*vm,lim=devMax();
+    h=numCell('MAP',fx(M.mapY,1),'cmH₂O')+numCell('ΔPhf',fx(M.ampEff||S.amp),'cmH₂O',M.hfLim?'b':'')+numCell('Frecuencia',fx(S.f),'Hz')+
+      numCell('VThf medido',fx(vm,2),`ml${S.vg?' · prog '+fx(S.vthf*P.kg,2):''}`,M.hfLim?'b':'')+numCell('VThf/kg',fx(vk,2),'ml/kg',vk>2.5?'w':'')+
+      numCell('DCO₂',fx(dm,0),'ml²/s')+numCell('DCO₂ corr',fx(dm/(P.kg*P.kg),0),'ml²/kg²·s')+
+      numCell('Límite equipo',fx(lim),`cmH₂O a ${fx(S.f)} Hz`,lim<S.ampMax-.5&&M.ampEff>=lim-.5?'b':'')+
+      numCell('Fuga',fx(leak()*100),'%',leak()>.3?'w':'')+numCell('Tubo',fx(tubo(),1),'mm')+numCell('I:E','1:'+S.ie,'');
   }else{
     const span=clamp(M.t-(M.tMode||0),6,30),rec=M.breaths.filter(b=>M.t-b.t<span),rr=rec.length*60/span,vk=vtKgNow(),tau=Rml()*C,te=60/S.rr-S.ti,nonInv=S.mode==='cpap'||S.mode==='nippv';
     const mv=rec.reduce((s,b)=>s+b.vt,0)*60/span/P.kg;
@@ -713,7 +741,7 @@ function paintNums(){
       numCell('τ / Te',`${fx(tau*1000)} ms`,`· Te ${S.mode==='cpap'?'–':fx(te,2)+' s'}`,(S.mode!=='cpap'&&te<3*tau)?'w':'')+
       numCell('Auto-PEEP',fx(M.autoPeep,1),'cmH₂O',M.autoPeep>1?'w':'')+
       (S.mode==='simv'?numCell('VT espontáneo',fx(spv,1),'ml/kg'):'')+(S.vg?numCell('PIP (VG)',fx(S.peep+dPset()),'cmH₂O',M.vgLim?'b':''):'')+
-      (nonInv?numCell('Fuga','~40','%','w'):'');
+      (nonInv?numCell('Fuga','~40','%','w'):numCell('Fuga',fx(leak()*100),'%',leak()>.3?'w':''));
   }
   $('nums').innerHTML=h;
   // vitales
@@ -730,7 +758,7 @@ function paintNums(){
   else if(ev.ext){al='⚠ VT MUY BAJO · fuga 100 %';lvl='on'}
   else if(sat<85){al='⚠ DESATURACIÓN';lvl='on'}
   else if(S.vg&&!hf&&M.vgLim){al='VT bajo: el PIP máximo no alcanza';lvl='mid'}
-  else if(hf&&S.vg&&M.ampEff>=S.ampMax-.5){al='Amplitud al tope: VThf no alcanzado';lvl='mid'}
+  else if(hf&&S.vg&&M.hfLim){al='VT hf no alcanzado';lvl='mid'}
   else if(!hf&&S.mode!=='cpap'&&M.autoPeep>1.5){al='Atrapamiento aéreo (auto-PEEP)';lvl='mid'}
   const A=$('alarm');A.textContent=al;A.className=lvl;
   // objetivos
