@@ -118,7 +118,55 @@ details ul{padding-left:18px;margin:6px 0}
 .win.on{display:block}
 ul.refs li{font-size:12.5px;line-height:1.45;margin-bottom:4px}ul.refs a{color:var(--acc)}
 .foot{font-size:11.5px;color:var(--muted);text-align:center;padding:4px 10px calc(24px + env(safe-area-inset-bottom,0px));line-height:1.4}
-@media(max-width:520px){.modes{grid-template-columns:repeat(3,1fr)}.nums{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:1fr 1fr}#waves{height:250px}.vit .v{font-size:19px}}
+/* ===== pantalla del respirador (diseño propio) ===== */
+.vent{--vb:#0a1530;--vp:#10234d;--vl:#24427f;--vt:#d9e6ff;--vm:#8fa6d6;--vc:#7fd3ff;--va:#ffcc33;
+  background:linear-gradient(180deg,#0c1b3d,#081127);color:var(--vt);border-radius:18px;padding:8px;margin-bottom:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.35),inset 0 0 0 1px #1b3266}
+.vbar{display:grid;grid-template-columns:auto auto 1fr auto;gap:8px;align-items:center;padding:2px 2px 8px}
+.vpat{display:flex;gap:6px;align-items:center;font-size:12px}.vpat .vico{font-size:20px}
+.vpat b{display:block;font-size:14px}.vpat small{color:var(--vm)}
+.vmode{font-size:20px;font-weight:800;letter-spacing:.02em;padding:2px 10px;border-left:1px solid var(--vl);border-right:1px solid var(--vl)}
+.valarm{min-height:30px;border-radius:6px;font-weight:800;font-size:13.5px;padding:5px 10px;text-align:center;color:#1a1300;background:transparent}
+.valarm.on{background:var(--va);animation:bl 1s infinite}.valarm.mid{background:var(--va)}
+.vclock{text-align:right;font-size:11px;color:var(--vm)}.vclock b{display:block;font-size:15px;color:var(--vt);font-variant-numeric:tabular-nums}
+.vmain{display:grid;grid-template-columns:1fr;gap:6px}
+.vcurves{background:var(--vp);border:1px solid var(--vl);border-radius:10px;padding:2px}
+#waves{height:280px}
+.vnums{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.vnums>div{background:var(--vp);border:1px solid var(--vl);border-radius:8px;padding:5px 8px;min-height:58px;display:flex;flex-direction:column;justify-content:space-between}
+.vnums .t{font-size:11px;color:var(--vm);font-weight:700}
+.vnums .v{font-size:24px;font-weight:700;color:var(--vc);text-align:right;font-variant-numeric:tabular-nums;line-height:1.1}
+.vnums .v small{display:block;font-size:10px;color:var(--vm);font-weight:600}
+.vnums .w{color:#ffd166}.vnums .b{color:#ff8fab}
+.vloops{display:grid;grid-template-columns:1fr auto;gap:6px;margin-top:6px}
+#loop{height:150px;background:var(--vp);border:1px solid var(--vl);border-radius:10px}
+.vside{display:flex;flex-direction:column;gap:6px;justify-content:space-between}
+.lsel,.ctl{display:flex;flex-direction:column;gap:5px}.ctl{flex-direction:row}
+.lsel button,.ctl button{border:1px solid var(--vl);border-radius:8px;padding:8px 9px;font-weight:700;font-size:12px;background:var(--vp);color:var(--vt)}
+.lsel button.on,.ctl button.on{background:#2b5bb5;border-color:#4d7fe0;color:#fff}
+.vdials{display:flex;gap:8px;overflow-x:auto;padding:12px 2px 6px;scrollbar-width:none;margin-top:4px}
+.vdials::-webkit-scrollbar{display:none}
+.dial{flex:none;width:76px;text-align:center;cursor:pointer;user-select:none}
+.ring{width:66px;height:66px;margin:0 auto;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--vc) var(--p,0%),#21386b 0)}
+.ring span{width:56px;height:56px;border-radius:50%;background:#0d1c3f;display:grid;place-items:center;font-size:17px;font-weight:800;line-height:1.05;font-variant-numeric:tabular-nums}
+.ring span small{font-size:9px!important}
+.dial .dl{font-size:11px;font-weight:700;margin-top:4px;line-height:1.15}.dial .du{font-size:10px;color:var(--vm)}
+.dial.sel .ring{box-shadow:0 0 0 3px #ffffff,0 0 14px #7fd3ff}.dial.sel .dl{color:#fff}
+.dial.dis{opacity:.35}
+.dial.hl .ring span{background:#16336f}
+.vadj{display:grid;grid-template-columns:64px 1fr 64px;gap:8px;align-items:center;margin-top:4px;background:var(--vp);border:1px solid var(--vl);border-radius:12px;padding:6px}
+.vadj button{height:52px;border-radius:10px;border:0;background:#2b5bb5;color:#fff;font-size:28px;font-weight:800}
+.vadjv{text-align:center}.vadjv small{display:block;font-size:11px;color:var(--vm);font-weight:700}
+.vadjv b{font-size:28px;font-variant-numeric:tabular-nums;color:#fff}.vadjv b small{display:inline!important;font-size:12px!important}
+.vtg{display:flex;align-items:center;gap:10px;margin-top:8px;padding:9px 12px;border-radius:10px;background:var(--vp);border:1px solid var(--vl);font-weight:700;font-size:14px}
+.vtg input{width:22px;height:22px;accent-color:#4d9bff}
+.vtabs{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:8px;border-radius:10px;overflow:hidden;border:1px solid var(--vl)}
+.vtabs button{border:0;border-right:1px solid var(--vl);background:#d7deec;color:#1b2a4a;font-weight:800;font-size:13.5px;padding:12px 2px}
+.vtabs button:last-child{border-right:0}
+.vtabs button.on{background:#0c1b3d;color:#fff;box-shadow:inset 0 3px 0 #7fd3ff}
+.vinfo{font-size:12.5px;color:var(--vm);margin:8px 2px 2px;line-height:1.45}
+@media(min-width:760px){.vmain{grid-template-columns:1fr 290px}.vnums{grid-template-columns:1fr 1fr;align-content:start}#waves{height:330px}}
+@media(max-width:520px){.vmode{font-size:16px;padding:2px 6px}.vbar{grid-template-columns:auto auto 1fr}.vclock{display:none}#waves{height:250px}.vit .v{font-size:19px}.vnums .v{font-size:20px}}
 </style>
 </head>
 <body>
@@ -181,33 +229,41 @@ ul.refs li{font-size:12.5px;line-height:1.45;margin-bottom:4px}ul.refs a{color:v
   </div>
 </section>
 
-<!-- MONITOR -->
-<section class="card">
-  <div class="mon">
-    <canvas id="waves"></canvas>
-    <div class="nums" id="nums"></div>
-    <div class="loopw">
-      <canvas id="loop"></canvas>
-      <div class="lsel"><button id="lPV" class="on">P-V</button><button id="lFV">F-V</button></div>
+<!-- PANTALLA DEL RESPIRADOR -->
+<section class="vent" id="vent">
+  <div class="vbar">
+    <div class="vpat"><span class="vico">👶</span><div><b id="vKg">–</b><small id="vTubo">–</small></div></div>
+    <div class="vmode" id="vMode">–</div>
+    <div class="valarm" id="vAlarm"></div>
+    <div class="vclock"><small>Paciente</small><b id="vClock">00:00</b></div>
+  </div>
+  <div class="vmain">
+    <div class="vcurves"><canvas id="waves"></canvas></div>
+    <div class="vnums" id="nums"></div>
+  </div>
+  <div class="vloops">
+    <canvas id="loop"></canvas>
+    <div class="vside">
+      <div class="lsel"><button id="lPV" class="on">Bucle P-V</button><button id="lFV">Bucle F-V</button></div>
+      <div class="ctl"><button id="wFast">2 s</button><button id="wNorm" class="on">6 s</button><button id="wSlow">12 s</button></div>
     </div>
-    <div class="ctl"><button id="wFast">Barrido 2 s</button><button id="wNorm" class="on">Barrido 6 s</button><button id="wSlow">Barrido 12 s</button></div>
   </div>
-</section>
-
-<!-- RESPIRADOR -->
-<section class="card">
-  <h2>Respirador</h2>
-  <div class="modes" id="modes">
-    <button data-m="cpap">CPAP<small>no invasivo</small></button>
-    <button data-m="nippv">NIPPV<small>no invasivo</small></button>
-    <button data-m="ac">AC<small>SIPPV</small></button>
-    <button data-m="simv">SIMV<small>sincronizada</small></button>
-    <button data-m="psv">PSV<small>soporte</small></button>
-    <button data-m="hfo">VAFO<small>alta frec.</small></button>
+  <div class="vdials" id="steps"></div>
+  <div class="vadj" id="adj">
+    <button data-d="-1" aria-label="Bajar">−</button>
+    <div class="vadjv"><small id="adjL">–</small><b id="adjV">–</b><small id="adjU"></small></div>
+    <button data-d="1" aria-label="Subir">+</button>
   </div>
-  <label class="tg" id="vgRow"><input type="checkbox" id="vg"> Volumen garantizado (VG)</label>
-  <div class="steps" id="steps"></div>
-  <p class="info" id="modeInfo"></p>
+  <label class="vtg" id="vgRow"><input type="checkbox" id="vg"><span>VG · volumen garantizado</span></label>
+  <div class="vtabs" id="modes">
+    <button data-m="cpap">CPAP</button>
+    <button data-m="nippv">NIPPV</button>
+    <button data-m="ac">AC</button>
+    <button data-m="simv">SIMV</button>
+    <button data-m="psv">PSV</button>
+    <button data-m="hfo">VAFO</button>
+  </div>
+  <p class="vinfo" id="modeInfo"></p>
 </section>
 
 <!-- GASES Y OBJETIVOS -->
@@ -622,34 +678,39 @@ const INFO={
   psv:'Cada esfuerzo recibe soporte; termina cuando el flujo cae al % del pico. Ti = Ti máximo. FR = respaldo por apnea.',
   hfo:'Oxigenación: MAP y FiO₂. Ventilación: DCO₂ = f × VT². Con VG se programa el VThf; sin VG, la amplitud.'
 };
+let selK=null;
+function dialPct(k){const d=DEF[k];return Math.round((S[k]-d.mn)/(d.mx-d.mn)*100)}
+function dialLab(k){const m=S.mode;let lab=DEF[k].l;
+  if(m!=='hfo'&&k==='pip'&&S.vg)lab='PIP inicial';if(k==='pip'&&m==='psv'&&!S.vg)lab='PIP soporte';if(k==='peep'&&m==='cpap')lab='CPAP';return lab}
+function dialDis(k){const m=S.mode;if(m!=='hfo')return (k==='vt'||k==='pmax')&&!S.vg;return (k==='amp'&&S.vg)||((k==='vthf'||k==='ampMax')&&!S.vg)}
+function valTxt(k){const d=DEF[k];return d.fmt?d.fmt(S[k]):fx(S[k],d.d)}
+function paintAdj(){const k=selK;if(!k)return;const d=DEF[k];
+  $('adjL').textContent=dialLab(k)+(dialDis(k)?' (inactivo)':'');$('adjV').innerHTML=valTxt(k);$('adjU').textContent=d.u}
 function renderSteps(){
   const m=S.mode, keys=LAYOUT[m];
   $('vgRow').style.display=(m==='cpap'||m==='nippv')?'none':'flex';
   $('vg').checked=S.vg;
   $('modeInfo').textContent=INFO[m];
   document.querySelectorAll('#modes button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
-  $('steps').innerHTML=keys.map(k=>{const d=DEF[k];
-    let dis=false,lab=d.l;
-    if(m!=='hfo'){if(k==='vt'||k==='pmax')dis=!S.vg;if(k==='pip'&&S.vg)lab='PIP inicial';}
-    else{if(k==='amp')dis=S.vg;if(k==='vthf'||k==='ampMax')dis=!S.vg;}
-    if(k==='pip'&&m==='psv'&&!S.vg)lab='PIP (soporte)';
-    if(k==='peep'&&m==='cpap')lab='CPAP';
-    return `<div class="st${dis?' dis':''}" data-k="${k}"><div class="l"><span>${lab}</span><span>${d.u}</span></div>
-      <div class="r"><button data-d="-1">−</button><div class="val" id="sv-${k}">${d.fmt?d.fmt(S[k]):fx(S[k],d.d)}</div><button data-d="1">+</button></div></div>`}).join('');
-  $('steps').querySelectorAll('.st').forEach(el=>el.querySelectorAll('button').forEach(b=>{
-    let hold;const k=el.dataset.k,dir=+b.dataset.d;
-    const doit=()=>{const d=DEF[k];S[k]=clamp(Math.round((S[k]+dir*d.st)/d.st*1000)/1000*d.st,d.mn,d.mx);
-      S[k]=+S[k].toFixed(3);
-      if(k==='pip'||k==='peep'){if(S.pip<S.peep+4)S.pip=S.peep+4;M.dPvg=S.vg?M.dPvg:null}
-      if(k==='amp'&&!S.vg)M.ampEff=S.amp;
-      $('sv-'+k).innerHTML=d.fmt?d.fmt(S[k]):fx(S[k],d.d);
-      if(k==='pip'||k==='peep')['pip','peep'].forEach(x=>{const e=$('sv-'+x);if(e)e.textContent=fx(S[x],0)});
-      el.classList.add('hl');setTimeout(()=>el.classList.remove('hl'),300)};
-    b.onclick=doit;
-    b.addEventListener('pointerdown',()=>{hold=setTimeout(function rep(){doit();hold=setTimeout(rep,120)},450)});
-    ['pointerup','pointerleave','pointercancel'].forEach(e=>b.addEventListener(e,()=>clearTimeout(hold)));
-  }));
+  if(!keys.includes(selK))selK=keys.find(k=>!dialDis(k))||keys[0];
+  $('steps').innerHTML=keys.map(k=>`<div class="dial${dialDis(k)?' dis':''}${k===selK?' sel':''}" data-k="${k}">
+      <div class="ring" style="--p:${dialPct(k)}%"><span id="sv-${k}">${valTxt(k)}</span></div>
+      <div class="dl">${dialLab(k)}</div><div class="du">${DEF[k].u||'&nbsp;'}</div></div>`).join('');
+  $('steps').querySelectorAll('.dial').forEach(el=>el.onclick=()=>{selK=el.dataset.k;
+    $('steps').querySelectorAll('.dial').forEach(x=>x.classList.toggle('sel',x===el));paintAdj()});
+  paintAdj();
 }
+function bump(dir){const k=selK;if(!k)return;const d=DEF[k];
+  S[k]=clamp(Math.round((S[k]+dir*d.st)/d.st*1000)/1000*d.st,d.mn,d.mx);S[k]=+S[k].toFixed(3);
+  if(k==='pip'||k==='peep'){if(S.pip<S.peep+4)S.pip=S.peep+4;M.dPvg=S.vg?M.dPvg:null}
+  if(k==='amp'&&!S.vg)M.ampEff=S.amp;
+  (k==='pip'||k==='peep'?['pip','peep']:[k]).forEach(x=>{const e=$('sv-'+x);if(e){e.innerHTML=valTxt(x);e.parentElement.style.setProperty('--p',dialPct(x)+'%')}});
+  const el=document.querySelector(`.dial[data-k="${k}"]`);if(el){el.classList.add('hl');setTimeout(()=>el.classList.remove('hl'),250)}
+  paintAdj()}
+$('adj').querySelectorAll('button').forEach(b=>{let hold;const dir=+b.dataset.d;
+  b.onclick=()=>bump(dir);
+  b.addEventListener('pointerdown',()=>{hold=setTimeout(function rep(){bump(dir);hold=setTimeout(rep,110)},450)});
+  ['pointerup','pointerleave','pointercancel'].forEach(e=>b.addEventListener(e,()=>clearTimeout(hold)));});
 $('modes').querySelectorAll('button').forEach(b=>b.onclick=()=>{
   const m=b.dataset.m;if(m===S.mode)return;
   if(m==='hfo'){S.hfMap=Math.max(S.hfMap,Math.round(M.map+2));M.ampEff=S.vg?Math.min(S.ampMax,20):S.amp;M.hfVT=0;setWin(1.5)}
@@ -885,7 +946,7 @@ function drawWaves(){
     else{lo=Math.min(0,mn);hi=Math.max(1,mx*1.15)}
     const r=rng[k];r[0]+=(lo-r[0])*.08;r[1]+=(hi-r[1])*.08;lo=r[0];hi=r[1];
     const y0=si*sh+6*DPR,hh=sh-12*DPR,Y=v=>y0+hh-(v-lo)/(hi-lo)*hh;
-    ctx.strokeStyle='rgba(255,255,255,.08)';ctx.lineWidth=1;ctx.beginPath();
+    ctx.strokeStyle='rgba(127,170,255,.18)';ctx.lineWidth=1;ctx.beginPath();
     if(lo<0&&hi>0){ctx.moveTo(0,Y(0));ctx.lineTo(W,Y(0))}
     ctx.moveTo(0,si*sh);ctx.lineTo(W,si*sh);ctx.stroke();
     if(k==='p'&&S.mode!=='hfo'){ctx.setLineDash([4*DPR,4*DPR]);ctx.strokeStyle='rgba(255,209,102,.35)';ctx.beginPath();ctx.moveTo(0,Y(S.peep));ctx.lineTo(W,Y(S.peep));ctx.stroke();ctx.setLineDash([])}
@@ -951,6 +1012,11 @@ function paintNums(){
   else if(hf&&S.vg&&M.hfLim){al='VT hf no alcanzado';lvl='mid'}
   else if(!hf&&S.mode!=='cpap'&&M.autoPeep>1.5){al='Atrapamiento aéreo (auto-PEEP)';lvl='mid'}
   const A=$('alarm');A.textContent=al;A.className=lvl;
+  const VA=$('vAlarm');VA.textContent=al;VA.className='valarm '+lvl;
+  const MN={cpap:'CPAP',nippv:'NIPPV',ac:'AC',simv:'SIMV',psv:'PSV',hfo:'VAFO'};
+  $('vMode').textContent=MN[S.mode]+(S.vg&&S.mode!=='cpap'&&S.mode!=='nippv'?'-VG':'');
+  $('vKg').textContent=fx(P.kg*1000)+' g';$('vTubo').textContent=S.mode==='cpap'||S.mode==='nippv'?'Interfaz nasal':'Tubo '+fx(tubo(),1);
+  const ts=Math.floor(G.tSim);$('vClock').textContent=`${String(Math.floor(ts/60)).padStart(2,'0')}:${String(ts%60).padStart(2,'0')}`;
   // objetivos
   const L=goals();$('goals').innerHTML=L.map(([t,ok])=>`<span class="chip ${ok?'ok':''}">${ok?'✓':'✗'} ${t}</span>`).join('');
 }
