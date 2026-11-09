@@ -1,8 +1,9 @@
 // Simulador de Ventilación Neonatal - funcionamiento sin conexión
 // Cambiá VERSION en cada actualización para que los celulares bajen la nueva.
-const VERSION = "s8";
+const VERSION = "s9";
 const CACHE = "simvent-" + VERSION;
-const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon.png"];
+const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon.png",
+  "./eval/eval.css", "./eval/refs.js", "./eval/casos-m1.js", "./eval/casos-m2.js", "./eval/casos-m3.js", "./eval/casos-m45.js", "./eval/casos-m6.js", "./eval/recursos.js", "./eval/motor.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x.startsWith("simvent-") && x !== CACHE).map(x => caches.delete(x)))).then(() => self.clients.claim()));
