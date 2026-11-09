@@ -3,7 +3,7 @@
 const E=window.EVAL=window.EVAL||{refs:{},casos:[],glos:[],modos:[]};
 E.casos.push(
 {
-id:'sdr30',mod:1,mods:[1,5,6],nivel:'intermedio',sim:'libre',
+id:'sdr30',mod:1,mods:[1,5,6],nivel:'intermedio',sim:'ev_sdr30_2',
 titulo:'Prematuro de 30 semanas con SDR: CPAP, surfactante mínimamente invasivo y apneas',
 sub:'Del soporte en sala de partos al destete de la CPAP',
 pres:{
@@ -36,7 +36,7 @@ exp:'Ensayos como el SUPPORT mostraron que la CPAP desde la sala de partos es un
 no:['El surfactante profiláctico a todos los prematuros dejó de ser la estrategia de elección desde que la CPAP temprana mostró resultados similares o mejores con menos intubaciones.',null,'El oxígeno a flujo libre no aporta presión de distensión y no evita el colapso alveolar de un pulmón deficiente en surfactante.','Ventilar con presión positiva a un bebé que respira no está indicado, y presiones altas sin medir el volumen aumentan el riesgo de volutrauma y neumotórax.'],
 base:'La presión de distensión continua estabiliza la capacidad residual funcional, reduce el trabajo respiratorio y mejora la relación ventilación/perfusión en el pulmón con déficit de surfactante.',ev:'F',refs:['support2010','sweet2023']}
 ]},
-{t:'Etapa 2 · UCIN, 1 hora de vida',d:{'Soporte':'CPAP 6 cmH₂O','FiO₂':'0,40','SpO₂':'88 %','FR':'74 rpm, quejido','Gases':'pH 7,26 · pCO₂ 58 · HCO₃⁻ 25','Rx':'Patrón reticulogranular con broncograma'},
+{sim:'ev_sdr30_2',t:'Etapa 2 · UCIN, 1 hora de vida',d:{'Soporte':'CPAP 6 cmH₂O','FiO₂':'0,40','SpO₂':'88 %','FR':'74 rpm, quejido','Gases':'pH 7,26 · pCO₂ 58 · HCO₃⁻ 25','Rx':'Patrón reticulogranular con broncograma'},
 q:[
 {id:'q3',tema:'Criterio de surfactante de rescate',p:'Con CPAP 6 cmH₂O necesita FiO₂ 0,40 y la radiografía es compatible con SDR. ¿Qué corresponde?',
 o:['Esperar a que la FiO₂ supere 0,60 para indicar surfactante','Administrar surfactante ahora: necesita FiO₂ > 0,30 con CPAP de al menos 6 cmH₂O','Intubar y ventilar 24 horas antes de decidir el surfactante','Subir la CPAP a 10 cmH₂O y esperar 6 horas'],ok:1,
@@ -54,7 +54,7 @@ exp:'La pCO₂ alta con bicarbonato normal y pH bajo define una acidosis respira
 no:['El HCO₃⁻ y el EB son normales: no hay componente metabólico.',null,'No hay componente metabólico y el pH está por encima de 7,22; no es una acidosis mixta grave.','El pH es ácido; no puede tratarse de una alcalosis.'],
 base:'pH = 6,1 + log [HCO₃⁻ / (0,03 × pCO₂)]. Un aumento agudo de la pCO₂ baja el pH porque el riñón tarda días en retener bicarbonato.',ev:'E',refs:['sweet2023']}
 ]},
-{t:'Etapa 3 · Dos horas después del surfactante (LISA)',d:{'Soporte':'CPAP 6 cmH₂O','FiO₂':'0,25','SpO₂':'96 %','FR':'58 rpm, quejido leve','Gases':'pH 7,31 · pCO₂ 49'},
+{sim:'ev_sdr30_2',t:'Etapa 3 · Dos horas después del surfactante (LISA)',d:{'Soporte':'CPAP 6 cmH₂O','FiO₂':'0,25','SpO₂':'96 %','FR':'58 rpm, quejido leve','Gases':'pH 7,31 · pCO₂ 49'},
 q:[
 {id:'q6',tema:'Metas de SpO₂ en el prematuro',p:'Con FiO₂ 0,25 la SpO₂ es de 96 %. ¿Qué rango de saturación conviene mantener mientras recibe oxígeno?',
 o:['85–89 %','90–94 %, con alarmas en 89 y 95 %','95–99 %','Mayor de 97 % para proteger el cerebro'],ok:1,
@@ -62,7 +62,7 @@ exp:'El metaanálisis NeOProM (5 ensayos, prematuros < 28 semanas) mostró que e
 no:['El rango 85–89 % se asoció a mayor mortalidad y enterocolitis en NeOProM.',null,'Una saturación tan alta en oxígeno suplementario expone a hiperoxia y retinopatía.','No hay beneficio cerebral demostrado de saturaciones tan altas; sí hay riesgo de toxicidad por oxígeno.'],
 base:'Por encima de ~95 % la curva de disociación es plana: la PaO₂ puede subir mucho sin cambios en la SpO₂, y la hiperoxia pasa inadvertida.',ev:'F',refs:['askie2018','sweet2023']}
 ]},
-{t:'Etapa 4 · Día 3: pausas respiratorias',d:{'Soporte':'CPAP 5 cmH₂O, FiO₂ 0,21','Eventos':'6 pausas > 20 s en 6 horas con bradicardia a 80 lpm; ceden con estímulo','Temperatura':'36,8 °C','Hemograma y PCR':'Normales','Glucemia':'72 mg/dL','Hematocrito':'45 %'},
+{sim:'ev_sdr30_4',t:'Etapa 4 · Día 3: pausas respiratorias',d:{'Soporte':'CPAP 5 cmH₂O, FiO₂ 0,21','Eventos':'6 pausas > 20 s en 6 horas con bradicardia a 80 lpm; ceden con estímulo','Temperatura':'36,8 °C','Hemograma y PCR':'Normales','Glucemia':'72 mg/dL','Hematocrito':'45 %'},
 q:[
 {id:'q7',tema:'Apnea del prematuro y cafeína',p:'Las causas secundarias se descartaron (temperatura, glucemia, hematocrito e infección normales). ¿Cuál es la conducta más adecuada?',
 o:['Subir la CPAP a 10 cmH₂O','Iniciar citrato de cafeína (carga y luego mantenimiento) y continuar la CPAP','Intubar y ventilar hasta las 34 semanas','Suspender la alimentación enteral hasta que cedan las pausas'],ok:1,
@@ -83,7 +83,7 @@ cierre:'La secuencia CPAP temprana → surfactante de rescate por LISA cuando la
 },
 
 {
-id:'postext',mod:1,mods:[1,2],nivel:'avanzado',sim:'extfail',
+id:'postext',mod:1,mods:[1,2],nivel:'avanzado',sim:'ev_postext_1',
 titulo:'Después de la extubación: CPAP, NIPPV, criterios de fracaso y segundo intento',
 sub:'Prematuro de 27 semanas tras 7 días de ventilación',
 pres:{
@@ -103,7 +103,7 @@ pres:{
 inicial:'El equipo decide extubar hoy. Tiene esfuerzo respiratorio propio regular, presiones de trabajo bajas y FiO₂ baja, con cafeína en curso.',
 obj:['Elegir el soporte no invasivo postextubación según la evidencia.','Comprender por qué la NIPPV puede reducir el fracaso de extubación.','Aplicar criterios de fracaso del soporte no invasivo e indicaciones de reintubación.','Planificar un segundo intento de extubación.','Reconocer las causas de pérdida de presión en la interfaz nasal.'],
 etapas:[
-{t:'Etapa 1 · Extubación',d:{'PIP de trabajo':'13–15 cmH₂O','FiO₂':'0,25','Cafeína':'Sí','Disparo':'55 rpm'},
+{sim:'ev_postext_1',t:'Etapa 1 · Extubación',d:{'PIP de trabajo':'13–15 cmH₂O','FiO₂':'0,25','Cafeína':'Sí','Disparo':'55 rpm'},
 q:[
 {id:'q1',tema:'Soporte postextubación en el prematuro extremo',p:'¿Qué soporte postextubación tiene mejor evidencia para reducir el fracaso de extubación en este bebé?',
 o:['Cánula nasal de bajo flujo con FiO₂ 0,30','NIPPV nasal (idealmente sincronizada); la CPAP de nivel adecuado es una alternativa válida','CPAP de 3 cmH₂O para minimizar el trauma nasal','Mantenerlo intubado hasta que pese 1500 g'],ok:1,
@@ -116,7 +116,7 @@ exp:'Las insuflaciones nasales aumentan la presión media en la vía aérea y, c
 no:['La interfaz nasal tiene fugas y la vía aérea superior está en el medio: el volumen que llega al pulmón es variable.',null,'Con la boca abierta se pierde buena parte de la presión entregada.','La cafeína tiene efecto propio sobre el control respiratorio y forma parte del plan de extubación.'],
 base:'La presión que llega a la tráquea depende de la fuga, de la posición de la glotis y del momento del ciclo respiratorio en que se entrega la insuflación.',ev:'C',refs:['lemyre2017','goldsmith2022']}
 ]},
-{t:'Etapa 2 · 24 horas después, en NIPPV',d:{'NIPPV':'PEEP 6, PIP 18, FR 30','FiO₂':'0,45','Eventos':'6 pausas por hora; 2 necesitaron ventilación con bolsa','Gases':'pH 7,19 · pCO₂ 72 · HCO₃⁻ 27','Examen':'Tiraje intenso, quejido'},
+{sim:'ev_postext_2',t:'Etapa 2 · 24 horas después, en NIPPV',d:{'NIPPV':'PEEP 6, PIP 18, FR 30','FiO₂':'0,45','Eventos':'6 pausas por hora; 2 necesitaron ventilación con bolsa','Gases':'pH 7,09 · pCO₂ 90 · HCO₃⁻ 27','Examen':'Tiraje intenso, quejido'},
 q:[
 {id:'q3',tema:'Criterios de fracaso del soporte no invasivo',p:'¿Cuál es la conducta más adecuada?',
 o:['Subir la PEEP a 12 cmH₂O y reevaluar en 12 horas','Reintubar: hay acidosis respiratoria grave, apneas que necesitan ventilación con bolsa y FiO₂ > 0,40','Pasar a cánula de alto flujo 8 L/min','Corregir el pH con bicarbonato y continuar en NIPPV'],ok:1,
@@ -124,7 +124,7 @@ exp:'Los criterios de fracaso varían entre unidades y ensayos, pero casi todos 
 no:['Una PEEP tan alta en interfaz nasal no resuelve las apneas ni la hipoventilación y puede sobredistender.',null,'El alto flujo da menos soporte que la NIPPV: sería un paso atrás.','El bicarbonato no corrige la causa (hipoventilación) y genera más CO₂; con mala ventilación puede empeorar la acidosis intracelular.'],
 base:'La acidosis respiratoria refleja hipoventilación alveolar; solo se corrige aumentando la ventilación.',ev:'I',refs:['sweet2023','lemyre2017','goldsmith2022']}
 ]},
-{t:'Etapa 3 · Día 14: segundo intento',d:{'Situación':'Reintubado; AC-VG estable','PIP de trabajo':'14–16 cmH₂O','FiO₂':'0,30','Cafeína':'Sí, a dosis de mantenimiento','Ventilación':'Lleva 12 días acumulados'},
+{sim:'ev_postext_1',t:'Etapa 3 · Día 14: segundo intento',d:{'Situación':'Reintubado; AC-VG estable','PIP de trabajo':'14–16 cmH₂O','FiO₂':'0,30','Cafeína':'Sí, a dosis de mantenimiento','Ventilación':'Lleva 12 días acumulados'},
 q:[
 {id:'q4',tema:'Facilitar la extubación en ventilación prolongada',p:'Sigue en ventilación a las 2 semanas pese a parámetros bajos. ¿Qué medida considera el consenso europeo para facilitar la extubación?',
 o:['Dexametasona en dosis altas por 6 semanas','Un curso corto y decreciente de dexametasona en dosis baja, evaluando riesgos y beneficios con la familia','Hidrocortisona profiláctica a todos los prematuros','Ninguna; los corticoides están contraindicados en prematuros'],ok:1,

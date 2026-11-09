@@ -3,7 +3,7 @@
 const E=window.EVAL=window.EVAL||{refs:{},casos:[],glos:[],modos:[]};
 E.casos.push(
 {
-id:'mecanica',mod:4,mods:[4,2],nivel:'basico',sim:'libre',
+id:'mecanica',mod:4,mods:[4,2],nivel:'basico',sim:'ev_mec_1',
 titulo:'Leer la pantalla: la mecánica respiratoria con números',
 sub:'MAP, I:E, constante de tiempo, volumen minuto, compliance y atrapamiento',
 pres:{
@@ -17,13 +17,13 @@ pres:{
  'Estado respiratorio':'AC limitada por presión: PIP 18, PEEP 5, Ti 0,35 s, FR 50 (no dispara por encima).',
  'Examen físico':'Buena expansión.',
  'Radiografía de tórax':'Opacidad reticulogranular leve.',
- 'Gases':'pH 7,35 · pCO₂ 45',
+ 'Gases':'pH 7,38 · pCO₂ 42',
  'Oxigenación':'SpO₂ 93 % con FiO₂ 0,30',
  'Mecánica medida':'VTe 7,5 mL · Resistencia 150 cmH₂O/L/s'},
 inicial:'En la recorrida se pide calcular a mano los valores que el respirador muestra, para entender de dónde salen.',
 obj:['Calcular la MAP con onda rectangular.','Calcular la relación I:E.','Calcular la compliance dinámica y la constante de tiempo.','Calcular el volumen minuto.','Predecir el atrapamiento aéreo a partir de la constante de tiempo.','Reconocer la sobredistensión en el bucle presión-volumen.'],
 etapas:[
-{t:'Etapa 1 · Presiones y tiempos',d:{'PIP':'18','PEEP':'5','Ti':'0,35 s','FR':'50 rpm'},
+{sim:'ev_mec_1',t:'Etapa 1 · Presiones y tiempos',d:{'PIP':'18','PEEP':'5','Ti':'0,35 s','FR':'50 rpm'},
 q:[
 {id:'q1',tema:'Cálculo de la MAP',p:'Con onda de presión aproximadamente rectangular, ¿cuál es la MAP estimada?',
 o:['6,2 cmH₂O','8,8 cmH₂O','11,5 cmH₂O','13,0 cmH₂O'],ok:1,
@@ -36,7 +36,7 @@ exp:'Te = 1,2 − 0,35 = 0,85 s. I:E = 0,35 : 0,85 = 1 : 2,4.',
 no:['Correspondería a Ti = Te = 0,6 s.','Correspondería a Ti 0,48 s.',null,'Correspondería a un ciclo más largo.'],
 base:'Ttotal = 60 / FR; Te = Ttotal − Ti.',ev:'E',refs:['goldsmith2022']}
 ]},
-{t:'Etapa 2 · Mecánica',d:{'VTe':'7,5 mL (5 mL/kg)','ΔP':'13 cmH₂O','Resistencia':'150 cmH₂O/L/s'},
+{sim:'ev_mec_1',t:'Etapa 2 · Mecánica',d:{'VTe':'7,5 mL (5 mL/kg)','ΔP':'13 cmH₂O','Resistencia':'150 cmH₂O/L/s'},
 q:[
 {id:'q3',tema:'Compliance dinámica',p:'¿Cuál es la compliance dinámica?',
 o:['0,38 mL/cmH₂O','0,58 mL/cmH₂O','1,7 mL/cmH₂O','97 mL/cmH₂O'],ok:1,
@@ -54,7 +54,7 @@ exp:'VM = VT × FR = 7,5 mL × 50 = 375 mL/min; por kilo: 375 / 1,5 = 250 mL/kg/
 no:['No corresponde.',null,'375 es el valor total, no por kilo.','Duplica el VT.'],
 base:'La pCO₂ depende de la ventilación alveolar, que es el volumen minuto menos la ventilación del espacio muerto.',ev:'E',refs:['goldsmith2022']}
 ]},
-{t:'Etapa 3 · Si cambia la mecánica',d:{'Escenario':'Si la resistencia subiera a 450 cmH₂O/L/s (secreciones, broncoespasmo) y la FR a 80 con Ti 0,35'},
+{sim:'ev_mec_3',t:'Etapa 3 · Si cambia la mecánica',d:{'Escenario':'Si la resistencia subiera a 450 cmH₂O/L/s (secreciones, broncoespasmo) y la FR a 80 con Ti 0,35'},
 q:[
 {id:'q6',tema:'Atrapamiento aéreo y auto-PEEP',p:'¿Qué pasaría en la espiración?',
 o:['Nada: la espiración es pasiva y siempre se completa','τ ≈ 0,26 s; 3 τ ≈ 0,78 s pero el Te sería 0,40 s: espiración incompleta, atrapamiento y auto-PEEP','La compliance aumentaría','La MAP bajaría'],ok:1,
@@ -72,7 +72,7 @@ cierre:'Con cuatro fórmulas se lee la pantalla: MAP ≈ PEEP + ΔP × Ti/Ttot, 
 },
 
 {
-id:'gases-ehi',mod:5,mods:[5,6],nivel:'intermedio',sim:'ehi',
+id:'gases-ehi',mod:5,mods:[5,6],nivel:'intermedio',sim:'ev_ehi_2',
 titulo:'Gases en la asfixia perinatal y la hipotermia terapéutica',
 sub:'Acidosis mixta, hipocapnia, corrección por temperatura y alcalosis metabólica',
 pres:{
@@ -83,7 +83,7 @@ pres:{
  'Diagnóstico':'Encefalopatía hipóxico-isquémica moderada; candidato a hipotermia.',
  'Motivo':'Ingreso para hipotermia terapéutica.',
  'Hemodinamia':'FC 105, PA media 42, relleno 3 s, lactato 13 mmol/L.',
- 'Estado respiratorio':'AC-VG: VT 5 mL/kg, FR de respaldo 40 (total 42), PEEP 5, FiO₂ 0,30.',
+ 'Estado respiratorio':'AC-VG: VT 5 mL/kg, FR de respaldo 60 (total 62), PEEP 5, FiO₂ 0,30.',
  'Examen físico':'Hipotonía, reflejos débiles.',
  'Radiografía de tórax':'Normal.',
  'Gases (cordón)':'pH 6,92 · pCO₂ 78 · HCO₃⁻ 15,8 · EB −18',
@@ -100,15 +100,15 @@ exp:'Ambos componentes están alterados en el mismo sentido: la pCO₂ alta acid
 no:['El HCO₃⁻ bajo y el EB −18 indican componente metabólico.',null,'No hay compensación: la pCO₂ está alta en lugar de baja.','El pH es muy ácido.'],
 base:'Si pCO₂ y HCO₃⁻ se mueven en direcciones que acidifican ambas, es un trastorno mixto.',ev:'E',refs:['goldsmith2022']}
 ]},
-{t:'Etapa 2 · Una hora después, en la UCIN',d:{'Gases':'pH 7,30 · pCO₂ 26 · HCO₃⁻ 12,6 · EB −13','Lactato':'8','Respirador':'AC-VG VT 5 mL/kg, FR 40 (total 42)'},
+{sim:'ev_ehi_2',t:'Etapa 2 · Una hora después, en la UCIN',d:{'Gases':'pH 7,20 · pCO₂ 33 · HCO₃⁻ 12,6 · EB −14','Lactato':'8','Respirador':'AC-VG VT 5 mL/kg, FR 60 (total 62)'},
 q:[
 {id:'q2',tema:'Hipocapnia en la encefalopatía',p:'¿Qué ajuste corresponde?',
 o:['Ninguno: la hipocapnia compensa la acidosis metabólica','Bajar la ventilación (FR de respaldo y/o VT) para normalizar la pCO₂: la hipocapnia se asocia a peor evolución en la encefalopatía','Dar bicarbonato para corregir el pH','Subir la FR para llevar el pH a 7,40'],ok:1,
-exp:'Casi no dispara por encima del respaldo: la pCO₂ de 26 la fija el respirador. En el análisis secundario del ensayo NICHD de hipotermia (Pappas 2011), la hipocapnia se asoció a muerte o discapacidad. La hipocapnia reduce el flujo sanguíneo cerebral. Se baja la ventilación para llevar la pCO₂ a rangos normales y se trata la causa de la acidosis metabólica (perfusión).',
+exp:'Casi no dispara por encima del respaldo: la pCO₂ de 33 la fija el respirador. En el análisis secundario del ensayo NICHD de hipotermia (Pappas 2011), la hipocapnia se asoció a muerte o discapacidad. La hipocapnia reduce el flujo sanguíneo cerebral. Se baja la ventilación para llevar la pCO₂ a rangos normales y se trata la causa de la acidosis metabólica (perfusión).',
 no:['Aunque la pCO₂ baja «compense» el pH, la hipocapnia en sí misma se asocia a daño cerebral.',null,'El bicarbonato no se recomienda en la reanimación ni para corregir la acidosis láctica; genera CO₂ y no trata la causa.','Más ventilación agravaría la hipocapnia.'],
 base:'La pCO₂ es el principal regulador del tono vascular cerebral.',ev:'E',refs:['pappas2011','aha2025']}
 ]},
-{t:'Etapa 3 · En hipotermia a 33,5 °C',d:{'Gasómetro':'Informa a 37 °C: pH 7,36 · pCO₂ 45','Temperatura del paciente':'33,5 °C','Respirador':'Mismos parámetros que antes de enfriar'},
+{sim:'ev_ehi_3',t:'Etapa 3 · En hipotermia a 33,5 °C',d:{'Gasómetro':'Informa a 37 °C: pH 7,36 · pCO₂ 45','Temperatura del paciente':'33,5 °C','Respirador':'Mismos parámetros que antes de enfriar'},
 q:[
 {id:'q3',tema:'Gases y temperatura',p:'¿Qué ocurre con la pCO₂ real del paciente a 33,5 °C?',
 o:['Es igual a la medida a 37 °C','Es menor (≈ 38 mmHg) porque el CO₂ es más soluble a menor temperatura; si se corrige o no a la temperatura del paciente (alfa-stat o pH-stat) es motivo de debate','Es mayor (≈ 52 mmHg)','No puede estimarse'],ok:1,
@@ -121,7 +121,7 @@ exp:'La producción de CO₂ cae con la temperatura. Si la ventilación minuto n
 no:['La compliance no explica el cambio.',null,'Más fuga reduciría el volumen entregado y subiría la pCO₂.','El dato dice que casi no dispara.'],
 base:'pCO₂ ≈ VCO₂ / ventilación alveolar.',ev:'E',refs:['goldsmith2022','pappas2011']}
 ]},
-{t:'Etapa 4 · Día 3',d:{'Gases':'pH 7,48 · pCO₂ 50 · HCO₃⁻ 37','Cl⁻':'92 mmol/L','Contexto':'Furosemida por sobrecarga hídrica; sonda gástrica abierta con débito alto'},
+{sim:'ev_ehi_4',t:'Etapa 4 · Día 3',d:{'Gases':'pH 7,48 · pCO₂ 50 · HCO₃⁻ 37','Cl⁻':'92 mmol/L','Contexto':'Furosemida por sobrecarga hídrica; sonda gástrica abierta con débito alto'},
 q:[
 {id:'q5',tema:'Alcalosis metabólica',p:'¿Cómo se interpretan?',
 o:['Acidosis respiratoria crónica','Alcalosis metabólica primaria (pérdida de cloro por diurético y sonda) con hipoventilación compensadora','Alcalosis respiratoria','Gases normales'],ok:1,

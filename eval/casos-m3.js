@@ -3,7 +3,7 @@
 const E=window.EVAL=window.EVAL||{refs:{},casos:[],glos:[],modos:[]};
 E.casos.push(
 {
-id:'vafo900',mod:3,mods:[3,4,5],nivel:'avanzado',sim:'vn',
+id:'vafo900',mod:3,mods:[3,4,5],nivel:'avanzado',sim:'ev_vafo_1',
 titulo:'Rescate con VAFO en un prematuro de 900 g: pulmón abierto, DCO₂ y frecuencia',
 sub:'Reclutamiento, radiografía, eliminación de CO₂ y límites del equipo a frecuencias altas',
 pres:{
@@ -14,16 +14,16 @@ pres:{
  'Diagnóstico':'SDR grave con falla de la ventilación convencional.',
  'Motivo':'Necesita presiones crecientes en AC-VG.',
  'Hemodinamia':'FC 160 lpm, PA media 30 mmHg, relleno 2 s.',
- 'Estado respiratorio':'AC-VG: VT 5,5 mL/kg con PIP de trabajo 28, PEEP 6, FR 60, Ti 0,3 s. MAP 11.',
+ 'Estado respiratorio':'AC-VG: VT 5,5 mL/kg con PIP de trabajo 25–28, PEEP 6, FR 60, Ti 0,3 s. MAP 11.',
  'Examen físico':'Tiraje, entrada de aire pobre bilateral.',
  'Radiografía de tórax':'Hipoinsuflación (6–7 espacios), vidrio esmerilado difuso.',
- 'Gases (arteriales)':'pH 7,15 · pCO₂ 75 · PaO₂ 45 · HCO₃⁻ 25',
- 'Oxigenación':'SpO₂ 86 % con FiO₂ 0,60',
+ 'Gases (arteriales)':'pH 7,24 · pCO₂ 60 · PaO₂ 50 · HCO₃⁻ 25',
+ 'Oxigenación':'SpO₂ 88–92 % con FiO₂ 0,60',
  'Soporte actual':'Tubo 2,5 · AC-VG'},
-inicial:'Pese a la ventilación convencional optimizada, necesita PIP de 28 para un VT de 5,5 mL/kg, FiO₂ 0,60 y tiene acidosis respiratoria. El equipo decide pasar a VAFO.',
+inicial:'Pese a la ventilación convencional optimizada, necesita PIP de 25–28 para un VT de 5,5 mL/kg, FiO₂ 0,60 y tiene acidosis respiratoria. El equipo decide pasar a VAFO.',
 obj:['Situar la VAFO de rescate en la evidencia.','Aplicar la estrategia de pulmón abierto guiada por la oxigenación.','Interpretar la radiografía en VAFO.','Usar la relación DCO₂ = f × VT² para decidir ajustes.','Reconocer el límite de amplitud del equipo a frecuencias altas.','Programar la relación I:E y destetar.','Reconocer el neumotórax a tensión en VAFO.'],
 etapas:[
-{t:'Etapa 1 · La decisión',d:{'PIP necesaria':'28 cmH₂O para 5,5 mL/kg','FiO₂':'0,60','pH / pCO₂':'7,15 / 75','MAP en convencional':'11 cmH₂O'},
+{sim:'ev_vafo_1',t:'Etapa 1 · La decisión',d:{'PIP necesaria':'25–28 cmH₂O para 5,5 mL/kg','FiO₂':'0,60','pH / pCO₂':'7,24 / 60','MAP en convencional':'11 cmH₂O'},
 q:[
 {id:'q1',tema:'VAFO electiva frente a rescate',p:'¿Qué afirmación sobre el uso de VAFO en este bebé es correcta?',
 o:['La VAFO electiva reduce claramente la mortalidad, por eso debió usarse desde el inicio','La VAFO electiva no mostró beneficio claro en mortalidad; su uso de rescate cuando la convencional necesita presiones altas es una práctica habitual, con evidencia más débil','La VAFO está contraindicada en menores de 1000 g','La VAFO solo sirve para eliminar CO₂, no para oxigenar'],ok:1,
@@ -41,7 +41,7 @@ exp:'En VAFO suele considerarse adecuada una expansión de ~8–9 espacios poste
 no:['Más MAP empeoraría la sobredistensión y la hemodinamia.',null,'La amplitud no corrige el volumen pulmonar.','El volumen puede ser una medida de apoyo, pero no corrige la causa.'],
 base:'La sobredistensión aumenta la resistencia vascular pulmonar y reduce la precarga del ventrículo izquierdo.',ev:'I',refs:['nhsggc','goldsmith2022']}
 ]},
-{t:'Etapa 2 · Retención de CO₂ en VAFO-VG',d:{'MAP':'12 cmH₂O','Frecuencia':'15 Hz','VThf objetivo':'1,2 mL/kg','I:E':'1:2','Gases':'pH 7,20 · pCO₂ 68','SpO₂ / FiO₂':'92 % / 0,30'},
+{sim:'ev_vafo_2',t:'Etapa 2 · Retención de CO₂ en VAFO-VG',d:{'MAP':'12 cmH₂O','Frecuencia':'15 Hz','VThf objetivo':'1,2 mL/kg','I:E':'1:2','Gases':'pH 7,08 · pCO₂ 86','SpO₂ / FiO₂':'91 % / 0,30'},
 q:[
 {id:'q4',tema:'DCO₂ y eliminación de CO₂',p:'Retiene CO₂ con VThf 1,2 mL/kg a 15 Hz. ¿Qué cambio aumenta más la eliminación de CO₂?',
 o:['Subir la frecuencia a 18 Hz','Subir el VThf a 1,5 mL/kg (DCO₂ ≈ +56 %)','Subir la MAP a 14','Subir la FiO₂ a 0,40'],ok:1,
@@ -59,7 +59,7 @@ exp:'Aunque la espiración es activa en VAFO, con frecuencias altas y vías aér
 no:['La oxigenación depende sobre todo de la MAP y la FiO₂.',null,'El atrapamiento puede aumentar la presión alveolar real, pero eso es un efecto adverso, no el objetivo.','Muchos equipos permiten cambiarla.'],
 base:'El gas atrapado eleva la presión alveolar media por encima de la MAP medida en la vía aérea.',ev:'I',refs:['nhsggc','goldsmith2022']}
 ]},
-{t:'Etapa 3 · Mejoría y destete',d:{'MAP':'11','FiO₂':'0,25','VThf':'1,5 mL/kg a 13 Hz','Gases':'pH 7,33 · pCO₂ 52','Rx':'8 espacios, sin sobredistensión'},
+{sim:'ev_vafo_3',t:'Etapa 3 · Mejoría y destete',d:{'MAP':'11','FiO₂':'0,25','VThf':'1,7 mL/kg a 13 Hz','Gases':'pH 7,34 · pCO₂ 50','Rx':'8 espacios, sin sobredistensión'},
 q:[
 {id:'q7',tema:'Destete de la VAFO',p:'¿En qué orden se desteta?',
 o:['Primero la MAP a 6 de una vez, después la FiO₂','Primero la FiO₂ hasta ~0,25–0,30; luego la MAP en pasos pequeños (≈1 cmH₂O) vigilando la oxigenación; la amplitud o el VThf según la pCO₂','Primero la frecuencia hasta 5 Hz','Primero el VThf hasta 0,5 mL/kg'],ok:1,
@@ -67,7 +67,7 @@ exp:'Mientras la FiO₂ sea alta, el pulmón todavía necesita volumen: bajar la
 no:['Un descenso brusco de la MAP colapsa el pulmón.',null,'La frecuencia no es el parámetro principal de destete.','Un VThf muy bajo produce hipercapnia.'],
 base:'La oxigenación es el mejor indicador del volumen pulmonar en VAFO.',ev:'I',refs:['nhsggc','dejaegere2006']}
 ]},
-{t:'Etapa 4 · Deterioro brusco',d:{'SpO₂':'65 %','FC':'110 lpm','PA media':'22 mmHg','Vibración torácica':'Disminuida en el hemitórax derecho','DCO₂':'Cayó a la mitad','Transiluminación':'Hemitórax derecho brillante'},
+{sim:'ev_vafo_4',t:'Etapa 4 · Deterioro brusco',d:{'SpO₂':'65 %','FC':'110 lpm','PA media':'22 mmHg','Vibración torácica':'Disminuida en el hemitórax derecho','DCO₂':'Cayó a la mitad','Transiluminación':'Hemitórax derecho brillante'},
 q:[
 {id:'q8',tema:'Neumotórax a tensión en VAFO',p:'¿Cuál es el diagnóstico y la conducta?',
 o:['Tubo obstruido: aspirar y esperar','Neumotórax a tensión: punción con aguja inmediata y luego drenaje','Derreclutamiento: subir la MAP a 18','Hipovolemia: bolo de volumen'],ok:1,
@@ -80,7 +80,7 @@ cierre:'La VAFO se basa en mantener el pulmón abierto con la MAP (guiada por la
 },
 
 {
-id:'pie',mod:3,mods:[3,6],nivel:'avanzado',sim:'pie',
+id:'pie',mod:3,mods:[3,6],nivel:'avanzado',sim:'ev_pie_1',
 titulo:'Enfisema intersticial pulmonar: VAFO de baja frecuencia y ventilación jet',
 sub:'Fuga aérea en un prematuro de 700 g',
 pres:{
@@ -94,13 +94,13 @@ pres:{
  'Estado respiratorio':'AC-VG: VT 5 mL/kg con PIP de trabajo 24, PEEP 6, FR 60.',
  'Examen físico':'Tórax abombado, entrada de aire disminuida.',
  'Radiografía de tórax':'Lucencias quísticas y lineales bilaterales que no siguen el árbol bronquial; pulmones hiperinsuflados.',
- 'Gases':'pH 7,20 · pCO₂ 66 · PaO₂ 42',
- 'Oxigenación':'SpO₂ 85 % con FiO₂ 0,55',
+ 'Gases':'pH 7,29 · pCO₂ 45 · PaO₂ 55',
+ 'Oxigenación':'SpO₂ 92–94 % con FiO₂ 0,55',
  'Soporte actual':'Tubo 2,5 · AC-VG'},
 inicial:'El enfisema empeora y las presiones necesarias siguen subiendo.',
 obj:['Comprender la fisiopatología del enfisema intersticial.','Aplicar el principio de minimizar presiones y volúmenes.','Conocer la evidencia de la ventilación jet en el enfisema intersticial.','Conocer la estrategia de VAFO de baja frecuencia y su nivel de evidencia.','Manejar el enfisema unilateral.','Diferenciar la espiración en la ventilación jet y en la VAFO.'],
 etapas:[
-{t:'Etapa 1 · Comprender el problema',d:{'Rx':'Lucencias quísticas bilaterales','PIP':'24','FiO₂':'0,55'},
+{sim:'ev_pie_1',t:'Etapa 1 · Comprender el problema',d:{'Rx':'Lucencias quísticas bilaterales','PIP':'24','FiO₂':'0,55'},
 q:[
 {id:'q1',tema:'Fisiopatología del enfisema intersticial',p:'¿Qué ocurre en el enfisema intersticial?',
 o:['Aire en el espacio pleural','Aire que escapó de los alvéolos rotos y diseca el intersticio y las vainas perivasculares: comprime vías aéreas y vasos, baja la compliance y aumenta el espacio muerto','Hiperinsuflación por atrapamiento sin rotura alveolar','Neumonía con abscesos'],ok:1,
@@ -113,7 +113,7 @@ exp:'Para que el aire intersticial se reabsorba, hay que reducir las presiones q
 no:['Más volumen aumenta la fuga.',null,'Más PEEP aumenta la presión media y puede agravar el enfisema.','La sedación sola no cambia el mecanismo.'],
 base:'La fuga aumenta con la presión transpulmonar y con el tiempo que se mantiene.',ev:'E',refs:['goldsmith2022']}
 ]},
-{t:'Etapa 2 · Opciones de alta frecuencia',d:{'Opción A':'Ventilación jet de alta frecuencia','Opción B':'VAFO de baja frecuencia'},
+{sim:'ev_pie_2',t:'Etapa 2 · Opciones de alta frecuencia',d:{'Opción A':'Ventilación jet de alta frecuencia','Opción B':'VAFO de baja frecuencia'},
 q:[
 {id:'q3',tema:'Ventilación jet en el enfisema intersticial',p:'¿Qué mostró el ensayo multicéntrico de Keszler (1991)?',
 o:['Que la ventilación jet aumentaba la mortalidad','Que la ventilación jet logró una mejoría más rápida del enfisema con presiones menores que la convencional','Que no había diferencias en ningún resultado','Que la jet solo servía en recién nacidos de término'],ok:1,

@@ -368,6 +368,7 @@ ul.refs li{font-size:12.5px;line-height:1.45;margin-bottom:4px}ul.refs a{color:v
 <main id="vCasos" hidden></main>
 <main id="vRec" hidden></main>
 
+<script src="eval/sim-casos.js"></script>
 <script>
 "use strict";
 const $=id=>document.getElementById(id);
@@ -830,7 +831,8 @@ $('lcomp').onchange=()=>{S.lcomp=$('lcomp').checked};
 $('vg').onchange=()=>{S.vg=$('vg').checked;M.dPvg=null;if(S.mode==='hfo')M.ampEff=S.vg?Math.min(S.ampMax,M.ampEff||20):S.amp;renderSteps()};
 
 /* ============ CASOS / UI ============ */
-const GRP=[['libre','⚙️ Configurable'],['prem','Prematuros'],['hfo','VAFO'],['asinc','Asincronías y complicaciones'],['term','Término'],['cardio','Cardiología']];
+Object.assign(CASES,window.SIM_EVAL||{});
+const GRP=[['libre','⚙️ Configurable'],['eval','📋 Casos evaluables (por etapa)'],['prem','Prematuros'],['hfo','VAFO'],['asinc','Asincronías y complicaciones'],['term','Término'],['cardio','Cardiología']];
 $('caseSel').innerHTML=GRP.map(([g,l])=>{const ks=Object.keys(CASES).filter(k=>g==='libre'?k==='libre':CASES[k].grp===g);
   return `<optgroup label="${l}">${ks.map(k=>`<option value="${k}">${k==='libre'?'⚙️ ':''}${CASES[k].n}</option>`).join('')}</optgroup>`}).join('');
 function loadCase(k){
@@ -852,7 +854,7 @@ function loadCase(k){
   M.map=S.peep+2;
   for(let i=0;i<20000;i++)step(.0005);
   for(let i=0;i<40;i++){physio(30)}
-  G.co2=co2ss();G.o2=o2ss();G.tSim=0;M.fat=P.fat0||0;M.lkAcc=0;M.ptxAuto=false;(P.ev0||[]).forEach(e=>ev[e]=true);
+  G.co2=co2ss();if(P.co2i!=null)G.co2=P.co2i;G.o2=o2ss();G.tSim=0;M.fat=P.fat0||0;M.lkAcc=0;M.ptxAuto=false;ev.ptx=false;(P.ev0||[]).forEach(e=>ev[e]=true);
   document.querySelectorAll('.ev button').forEach(b=>b.classList.toggle('on',!!ev[b.dataset.e]));
   $('gasOut').innerHTML='';$('tipOut').innerHTML='';G.okFor=0;$('win').classList.remove('on');
   try{localStorage.setItem('simvent_case',k)}catch(e){}
@@ -1184,7 +1186,7 @@ $('caseSel').value=k0;loadCase(k0);paintNums();
 requestAnimationFrame(frame);
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 // para pruebas
-window.__sim={get S(){return S},get M(){return M},get G(){return G},get P(){return P},step,physio,co2ss,o2ss,lungC,odx,satNow,loadCase,dco2c,vaKg,satPost,qpqs,goals,tips,pH,bp,ev};
+window.__sim={CASES,vtKgNow,get S(){return S},get M(){return M},get G(){return G},get P(){return P},step,physio,co2ss,o2ss,lungC,odx,satNow,loadCase,dco2c,vaKg,satPost,qpqs,goals,tips,pH,bp,ev};
 </script>
 <script src="eval/refs.js"></script>
 <script src="eval/casos-m1.js"></script>

@@ -76,3 +76,5 @@ body:not([data-view="sim"]) #bPlay,body:not([data-view="sim"]) #bSlow,body:not([
 .ev-bib li{margin-bottom:8px}.ev-bib small{color:var(--muted)}
 @media(max-width:520px){.ev-filt{grid-template-columns:1fr}.ev-tiles{grid-template-columns:1fr}.ev-score b{font-size:40px}}
 [hidden]{display:none!important}
+.evlink{display:block;margin-top:8px;padding:8px 10px;border-radius:10px;background:var(--acc);color:#fff!important;font-weight:800;font-size:13px;text-decoration:none;text-align:center}
+.ev-simst{width:100%;margin-top:8px}

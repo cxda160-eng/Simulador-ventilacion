@@ -3,7 +3,7 @@
 const E=window.EVAL=window.EVAL||{refs:{},casos:[],glos:[],modos:[]};
 E.casos.push(
 {
-id:'elgan26',mod:2,mods:[2,4,5,6],nivel:'avanzado',sim:'emh',
+id:'elgan26',mod:2,mods:[2,4,5,6],nivel:'avanzado',sim:'ev_elgan_1',
 titulo:'Prematuro extremo de 26 semanas: AC-VG desde la intubación hasta la extubación',
 sub:'Caso integrador: modo, parámetros, surfactante, gases, complicaciones y destete',
 pres:{
@@ -23,7 +23,7 @@ pres:{
 inicial:'Llega a la UCIN intubado. Hay que conectarlo al respirador, dar surfactante y planificar la ventilación de los próximos días.',
 obj:['Justificar la ventilación con volumen objetivo como modo inicial.','Programar el VT inicial según el peso y el espacio muerto.','Anticipar los cambios de mecánica durante y después del surfactante en AC-VG.','Corregir la hipocapnia y la hiperoxia tras la mejoría de la compliance.','Aplicar un enfoque sistemático (DOPE) ante una desaturación aguda.','Elegir el método de aspiración y conocer sus efectos.','Ajustar la PEEP ante edema pulmonar por ductus.','Destetar en AC-VG sin aumentar el trabajo respiratorio.','Usar la cafeína y el soporte no invasivo para la extubación.','Clasificar la displasia con la definición actual.'],
 etapas:[
-{t:'Etapa 1 · Elección del modo',d:{'Peso':'800 g','Tubo':'2,5 a 6,0 cm','FiO₂':'0,60','Gases':'pH 7,18 · pCO₂ 64'},
+{sim:'ev_elgan_1',t:'Etapa 1 · Elección del modo',d:{'Peso':'800 g','Tubo':'2,5 a 6,0 cm','FiO₂':'0,60','Gases':'pH 7,18 · pCO₂ 64'},
 q:[
 {id:'q1',tema:'Ventilación con volumen objetivo',p:'¿Qué modo de ventilación invasiva inicial tiene mejor respaldo en este bebé?',
 o:['IMV no sincronizada con presión limitada','Ventilación sincronizada con volumen objetivo (por ejemplo AC con volumen garantizado)','VAFO electiva, porque reduce la mortalidad frente a la convencional','PSV sin frecuencia de respaldo'],ok:1,
@@ -36,7 +36,7 @@ exp:'Para el SDR se usan volúmenes de 4–6 mL/kg. En los bebés más pequeños
 no:['Volúmenes tan altos provocan volutrauma y aumentan el riesgo de neumotórax y displasia.',null,'Por debajo de ~4 mL/kg aumenta la proporción de espacio muerto, el trabajo respiratorio y la necesidad de presión para la misma ventilación alveolar.','Fijar la presión deja que el volumen cambie con la compliance: es justamente lo que el volumen objetivo evita.'],
 base:'Ventilación alveolar = (VT − espacio muerto) × FR. Si el VT se acerca al espacio muerto, la ventilación alveolar cae aunque aumente la FR.',ev:'E',refs:['goldsmith2022','klingenberg2017']}
 ]},
-{t:'Etapa 2 · Surfactante (poractant 200 mg/kg) en AC-VG',d:{'Modo':'AC-VG, VT 4,5 mL/kg','PEEP':'6 cmH₂O','PIP de trabajo antes':'22 cmH₂O','Pmax':'25 cmH₂O','FR de respaldo':'50 rpm','FiO₂':'0,55'},
+{sim:'ev_elgan_1',t:'Etapa 2 · Surfactante (poractant 200 mg/kg) en AC-VG',d:{'Modo':'AC-VG, VT 4,5 mL/kg','PEEP':'6 cmH₂O','PIP de trabajo antes':'22 cmH₂O','Pmax':'25 cmH₂O','FR de respaldo':'50 rpm','FiO₂':'0,55'},
 q:[
 {id:'q3',tema:'Surfactante en volumen garantizado',p:'Durante y justo después del surfactante, ¿qué es lo más esperable en AC-VG y cómo debe estar programada la Pmax?',
 o:['La PIP baja enseguida; conviene poner la Pmax igual a la PIP previa','Es frecuente la obstrucción transitoria del flujo con aumento de la PIP durante 30–60 minutos; la Pmax debe tener margen suficiente para no limitar el VT','El VG compensa todo; la Pmax no importa','Hay que pasar a presión limitada mientras dura el surfactante'],ok:1,
@@ -49,7 +49,7 @@ exp:'Con la mejor compliance hay hiperoxia (SpO₂ 98 %) e hipocapnia (pCO₂ 33
 no:['Una pCO₂ de 33 en un prematuro extremo es hipocapnia, que se asocia a lesión cerebral.',null,'Subir la PEEP con una compliance que mejora puede sobredistender y empeorar el retorno venoso.','Más frecuencia aumenta la ventilación minuto y empeora la hipocapnia.'],
 base:'pCO₂ ≈ VCO₂ / ventilación alveolar. Bajar la ventilación alveolar sube la pCO₂.',ev:'E',refs:['sweet2023','klingenberg2017']}
 ]},
-{t:'Etapa 3 · Día 2: desaturación súbita',d:{'SpO₂':'70 %','FC':'90 lpm','VT espirado':'1,5 mL/kg','PIP':'En la Pmax (25)','Fuga':'2 %','Auscultación':'Entrada de aire disminuida bilateral y simétrica'},
+{sim:'ev_elgan_3',t:'Etapa 3 · Día 2: desaturación súbita',d:{'SpO₂':'70 %','FC':'90 lpm','VT espirado':'1,5 mL/kg','PIP':'En la Pmax (25)','Fuga':'2 %','Auscultación':'Entrada de aire disminuida bilateral y simétrica'},
 q:[
 {id:'q5',tema:'Desaturación aguda: enfoque DOPE',p:'¿Qué hace primero?',
 o:['Subir la FiO₂ a 1,0 y la Pmax a 40 y esperar','Enfoque sistemático: desplazamiento del tubo, obstrucción, neumotórax y falla del equipo; ventilar a mano y confirmar el tubo (CO₂ espirado) mientras se evalúa','Sedar porque está «peleando» con el respirador','Pedir un ecocardiograma'],ok:1,
@@ -62,7 +62,7 @@ exp:'Hoellering y col. compararon aspiración abierta y cerrada en recién nacid
 no:['Toda aspiración genera presión negativa en la vía aérea y puede quitar volumen; desconectar además anula la PEEP.',null,'La aspiración rutinaria sin indicación expone a derreclutamiento, bradicardia e infección.','La aspiración cerrada también puede comprometer la ventilación en VG: el catéter ocupa la luz del tubo y la succión altera el volumen medido.'],
 base:'Tras perder volumen, el pulmón necesita más presión para volver a abrirse (histéresis); por eso la recuperación lleva tiempo.',ev:'E',refs:['hoellering2008','goldsmith2022']}
 ]},
-{t:'Etapa 4 · Día 5: más oxígeno y más presión',d:{'FiO₂':'0,40 (antes 0,25)','PIP de trabajo':'20 (antes 13) para VT 5 mL/kg','Rx':'Opacidad difusa bilateral nueva','Ecocardiograma':'Ductus de 2,2 mm con cortocircuito de izquierda a derecha y sobrecarga de cavidades izquierdas','PA':'Diastólica baja, pulsos saltones'},
+{sim:'ev_elgan_4',t:'Etapa 4 · Día 5: más oxígeno y más presión',d:{'FiO₂':'0,40 (antes 0,25)','PIP de trabajo':'20 (antes 13) para VT 5 mL/kg','Rx':'Opacidad difusa bilateral nueva','Ecocardiograma':'Ductus de 2,2 mm con cortocircuito de izquierda a derecha y sobrecarga de cavidades izquierdas','PA':'Diastólica baja, pulsos saltones'},
 q:[
 {id:'q7',tema:'Ductus, edema pulmonar y PEEP',p:'¿Qué ajuste ventilatorio es razonable mientras se decide el manejo del ductus?',
 o:['Bajar la PEEP a 3 para mejorar el retorno venoso','Subir la PEEP 1–2 cmH₂O para contrarrestar el edema alveolar y mejorar la compliance, vigilando la hemodinamia','Subir la FiO₂ a 1,0 para cerrar el ductus','Hiperventilar para bajar la pCO₂ a 30'],ok:1,
@@ -70,7 +70,7 @@ exp:'El cortocircuito de izquierda a derecha aumenta el flujo pulmonar y el líq
 no:['Bajar la PEEP con edema empeora el colapso alveolar y la oxigenación.',null,'La FiO₂ alta no es un tratamiento del ductus y expone a hiperoxia; además baja la resistencia pulmonar y puede aumentar el cortocircuito.','La hipocapnia reduce el flujo cerebral y también baja la resistencia vascular pulmonar, lo que puede aumentar el flujo ductal.'],
 base:'Más flujo pulmonar → más líquido intersticial → menor compliance. La PEEP contrarresta el colapso por edema.',ev:'E',refs:['fajardo2014','goldsmith2022']}
 ]},
-{t:'Etapa 5 · Día 8: destete',d:{'Modo':'AC-VG, VT 5 mL/kg','PIP de trabajo':'12–14 cmH₂O','PEEP':'6','FR de respaldo / total':'40 / 55','FiO₂':'0,25','Gases':'pH 7,32 · pCO₂ 52'},
+{sim:'ev_elgan_5',t:'Etapa 5 · Día 8: destete',d:{'Modo':'AC-VG, VT 5 mL/kg','PIP de trabajo':'12–14 cmH₂O','PEEP':'6','FR de respaldo / total':'40 / 55','FiO₂':'0,25','Gases':'pH 7,28 · pCO₂ 56'},
 q:[
 {id:'q8',tema:'Destete en AC-VG',p:'¿Cómo se desteta en este modo?',
 o:['Pasar a SIMV con FR 10 para que «entrene» los músculos','El VG baja la PIP solo a medida que mejoran la compliance y el esfuerzo; no bajar el VT por debajo de ~4 mL/kg y evaluar la extubación cuando la presión de trabajo se mantiene baja con FiO₂ baja','Bajar la FR de respaldo a 10 y esperar que baje la pCO₂','Bajar la PEEP a 3 para facilitar la extubación'],ok:1,
@@ -96,7 +96,7 @@ cierre:'La ventilación con volumen objetivo protege el pulmón y se ajusta sola
 },
 
 {
-id:'asinc',mod:2,mods:[2,4],nivel:'intermedio',sim:'autoc',
+id:'asinc',mod:2,mods:[2,4],nivel:'intermedio',sim:'ev_asinc_1',
 titulo:'Asincronías y fugas: cuando el respirador no escucha al bebé',
 sub:'Autociclado, PSV que no termina, SIMV con fatiga y disparos fallidos',
 pres:{
@@ -116,7 +116,7 @@ pres:{
 inicial:'El respirador muestra 95 ciclos por minuto, pero el bebé está quieto y no se le ven esfuerzos. La curva de flujo no vuelve a cero al final de la espiración.',
 obj:['Calcular el porcentaje de fuga.','Reconocer el autociclado y corregirlo.','Comprender cómo la fuga afecta al VG.','Explicar por qué la PSV no termina con fuga.','Identificar la fatiga en SIMV con frecuencia baja.','Reconocer los disparos fallidos.'],
 etapas:[
-{t:'Etapa 1 · Ciclado de 95 por minuto',d:{'VT inspirado':'7,0 mL','VT espirado':'3,9 mL','FR total':'95 rpm (respaldo 40)','Esfuerzos visibles':'No','Curva de flujo':'No vuelve a la línea de base'},
+{sim:'ev_asinc_1',t:'Etapa 1 · Ciclado de 95 por minuto',d:{'VT inspirado':'7,0 mL','VT espirado':'3,9 mL','FR total':'95 rpm (respaldo 40)','Esfuerzos visibles':'No','Curva de flujo':'No vuelve a la línea de base'},
 q:[
 {id:'q1',tema:'Cálculo de la fuga',p:'¿Cuál es el porcentaje de fuga?',
 o:['18 %','44 %','56 %','79 %'],ok:1,
@@ -134,7 +134,7 @@ exp:'Los respiradores neonatales suelen usar el VT espirado para regular el VG, 
 no:['La fuga cambia la medición del volumen: no puede funcionar igual.',null,'El respirador no puede cerrar una fuga alrededor del tubo.','El VG ajusta la PIP, no la PEEP.'],
 base:'Lo que el respirador no mide, no lo puede controlar.',ev:'E',refs:['goldsmith2022','klingenberg2017']}
 ]},
-{t:'Etapa 2 · Prueba en PSV',d:{'Modo':'PSV, presión de soporte 10 sobre PEEP 5','Terminación':'Al 10 % del flujo pico','Ti máximo':'0,6 s','Fuga':'40 %','Problema':'Todas las respiraciones duran 0,6 s'},
+{sim:'ev_asinc_2',t:'Etapa 2 · Prueba en PSV',d:{'Modo':'PSV, presión de soporte 10 sobre PEEP 5','Terminación':'Al 10 % del flujo pico','Ti máximo':'0,6 s','Fuga':'40 %','Problema':'Todas las respiraciones duran 0,6 s'},
 q:[
 {id:'q4',tema:'PSV que no termina por flujo',p:'¿Por qué todas las respiraciones llegan al Ti máximo?',
 o:['El bebé tiene esfuerzos muy prolongados','La fuga mantiene el flujo por encima del 10 % del pico y la inspiración no termina por flujo; subir el criterio de terminación (por ejemplo 15–25 %) o ajustar el Ti máximo','La presión de soporte es baja','El trigger es demasiado sensible'],ok:1,
@@ -142,7 +142,7 @@ exp:'En PSV la inspiración termina cuando el flujo cae a un porcentaje del pico
 no:['Todas las respiraciones duran exactamente el Ti máximo: es un límite del respirador, no el patrón del bebé.',null,'Más presión aumenta el flujo de fuga y empeora el problema.','La sensibilidad del trigger afecta el inicio, no la terminación.'],
 base:'La PSV es ciclada por flujo: cualquier flujo ajeno al paciente altera el ciclado.',ev:'E',refs:['goldsmith2022']}
 ]},
-{t:'Etapa 3 · SIMV con frecuencia baja',d:{'Modo':'SIMV 20 rpm sin presión de soporte, PIP 16, PEEP 5','FR total':'80 rpm','VT espontáneo':'2,5 mL/kg','Tiraje':'Intenso','Gases':'pH 7,25 · pCO₂ 62'},
+{sim:'ev_asinc_3',t:'Etapa 3 · SIMV con frecuencia baja',d:{'Modo':'SIMV 20 rpm sin presión de soporte, PIP 16, PEEP 5','FR total':'80 rpm','VT espontáneo':'2,5 mL/kg','Tiraje':'Intenso','Gases':'pH 7,25 · pCO₂ 62'},
 q:[
 {id:'q5',tema:'SIMV con frecuencia baja y fatiga',p:'¿Por qué empeoró en SIMV 20 y qué conviene?',
 o:['Necesita más FiO₂','Las respiraciones espontáneas por el tubo no tienen soporte: VT bajo cerca del espacio muerto y alto trabajo resistivo; volver a AC (o agregar presión de soporte a las espontáneas)','Hay que bajar la PEEP para que exhale mejor','Es el destete normal: esperar'],ok:1,
@@ -150,7 +150,7 @@ exp:'En SIMV solo las respiraciones mandatorias reciben la PIP; las espontáneas
 no:['La SpO₂ no es el problema principal; hay hipoventilación y fatiga.',null,'La PEEP baja aumenta el colapso alveolar y el trabajo respiratorio.','Taquipnea, tiraje y acidosis respiratoria no son un destete normal sino un fracaso.'],
 base:'Respiraciones rápidas y superficiales = mucha ventilación del espacio muerto y poca alveolar.',ev:'E',refs:['goldsmith2022']}
 ]},
-{t:'Etapa 4 · De vuelta en AC, curvas a revisar',d:{'Curva de presión':'Pequeñas deflexiones negativas sin respiración entregada','Disparos':'Muchos esfuerzos sin ciclo','Trigger':'Por flujo, 1,5 L/min'},
+{sim:'ev_asinc_4',t:'Etapa 4 · De vuelta en AC, curvas a revisar',d:{'Curva de presión':'Pequeñas deflexiones negativas sin respiración entregada','Disparos':'Muchos esfuerzos sin ciclo','Trigger':'Por flujo, 1,5 L/min'},
 q:[
 {id:'q6',tema:'Disparos fallidos',p:'¿Qué indican las deflexiones sin respiración entregada?',
 o:['Autociclado','Disparos fallidos (esfuerzos que no alcanzan el umbral): bajar el umbral del trigger, evaluar fuga y agua en el circuito','Hipo','Atrapamiento aéreo sin relación con el trigger'],ok:1,

@@ -103,7 +103,7 @@ function renderCaso(c){
     V.innerHTML=head+`<section class="card ev-prog"><div class="ev-pl"><span>Pregunta ${cur.i+1} de ${F.length}</span><span>Etapa ${it.e+1} de ${c.etapas.length}</span><span>${Object.values(cur.ans).filter(x=>x.ok).length} correctas</span></div>
       <div class="ev-bar"><i style="width:${(cur.i+(a?1:0))/F.length*100}%"></i></div>
       <div class="ev-dots">${F.map((f,i)=>{const r=cur.ans[f.q.id];return `<i class="${r?(r.ok?'ok':'bad'):i===cur.i?'cur':''}"></i>`}).join('')}</div></section>
-     <section class="card"><h2>${esc(et.t)}</h2>${tiles(et.d)}
+     <section class="card"><h2>${esc(et.t)}</h2>${tiles(et.d)}${et.sim?`<button class="btn2 ev-simst" data-sim="${et.sim}">🫁 Ver esta etapa en el simulador</button>`:''}
       ${prev.length?`<details class="ev-prev"><summary>Datos de las etapas anteriores</summary>${prev.map(p=>`<h4>${esc(p.t)}</h4>${tiles(p.d)}`).join('')}<h4>Presentación</h4>${tiles(c.pres)}</details>`:`<details class="ev-prev"><summary>Ver la presentación del caso</summary>${tiles(c.pres)}</details>`}</section>
      <section class="card"><p class="ev-tema">${esc(q.tema)}</p><p class="ev-q">${esc(q.p)}</p>
       <div class="ev-ops">${ord.map((oi,k)=>{const L='ABCDE'[k];let cls='';if(a){if(oi===q.ok)cls='ok';else if(oi===a.sel)cls='bad';else cls='dim'}
@@ -116,6 +116,7 @@ function renderCaso(c){
   $('evBack').onclick=()=>{st.view=null;save();history.replaceState(null,'','#casos');renderCasos();window.scrollTo(0,0)};
   const sb=$('evStart');if(sb)sb.onclick=()=>{if(!cur)start(c);else if(cur.i==null)cur.i=0;save();renderCaso(c);window.scrollTo(0,0)};
   V.querySelectorAll('.evSimB,#evSim').forEach(b=>b.onclick=()=>goSim(c.sim));
+  V.querySelectorAll('.ev-simst').forEach(b=>b.onclick=()=>goSim(b.dataset.sim));
   const rp=$('evRep');if(rp)rp.onclick=()=>{start(c);save();renderCaso(c);window.scrollTo(0,0)};
   const bl=$('evLib');if(bl)bl.onclick=()=>{st.view=null;st.cur=null;save();history.replaceState(null,'','#casos');renderCasos();window.scrollTo(0,0)};
 }

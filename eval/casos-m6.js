@@ -3,7 +3,7 @@
 const E=window.EVAL=window.EVAL||{refs:{},casos:[],glos:[],modos:[]};
 E.casos.push(
 {
-id:'sam',mod:6,mods:[6,3,5],nivel:'avanzado',sim:'samhfo',
+id:'sam',mod:6,mods:[6,3,5],nivel:'avanzado',sim:'ev_sam_1',
 titulo:'Síndrome de aspiración meconial con hipertensión pulmonar persistente',
 sub:'Cortocircuito ductal, índice de oxigenación, surfactante y óxido nítrico',
 pres:{
@@ -23,7 +23,7 @@ pres:{
 inicial:'Pese a FiO₂ 1,0 la PaO₂ es de 45 y hay una diferencia de 12 puntos entre la saturación pre y posductal.',
 obj:['Reconocer el cortocircuito de derecha a izquierda por la diferencia pre/posductal.','Calcular e interpretar el índice de oxigenación.','Ajustar la ventilación con atrapamiento aéreo.','Conocer la evidencia del surfactante en el SAM.','Conocer la evidencia del óxido nítrico inhalado.','Evitar la hiperventilación como tratamiento de la HTPP.','Reconocer cuándo pensar en ECMO.'],
 etapas:[
-{t:'Etapa 1 · Hipoxemia',d:{'SpO₂ pre / pos':'88 % / 76 %','FiO₂':'1,0','PaO₂':'45','MAP':'13'},
+{sim:'ev_sam_1',t:'Etapa 1 · Hipoxemia',d:{'SpO₂ pre / pos':'88 % / 76 %','FiO₂':'1,0','PaO₂':'45','MAP':'13'},
 q:[
 {id:'q1',tema:'Diferencia pre/posductal',p:'¿Qué indica la diferencia de 12 puntos entre la SpO₂ pre y posductal?',
 o:['Error del oxímetro','Cortocircuito de derecha a izquierda por el ductus: la presión pulmonar supera a la sistémica','Cardiopatía con flujo pulmonar aumentado','Anemia'],ok:1,
@@ -36,7 +36,7 @@ exp:'IO = MAP × FiO₂ × 100 / PaO₂ = 13 × 1,0 × 100 / 45 = 28,9. Valores 
 no:['Es la MAP.',null,'Es la PaO₂.','Es la pCO₂.'],
 base:'El IO integra la presión necesaria y el oxígeno necesario para lograr una PaO₂.',ev:'E',refs:['barrington2017','goldsmith2022']}
 ]},
-{t:'Etapa 2 · Ventilación y surfactante',d:{'Rx':'10 espacios, diafragmas aplanados','Curva de flujo':'No vuelve a cero al final de la espiración','FR':'50, Ti 0,4 → Te 0,8 s'},
+{sim:'ev_sam_1',t:'Etapa 2 · Ventilación y surfactante',d:{'Rx':'10 espacios, diafragmas aplanados','Curva de flujo':'No vuelve a cero al final de la espiración','FR':'50, Ti 0,4 → Te 0,8 s'},
 q:[
 {id:'q3',tema:'Ventilación en el SAM con atrapamiento',p:'¿Qué ajuste es más adecuado?',
 o:['Subir la FR a 70 para bajar la pCO₂','Alargar el tiempo espiratorio (bajar la FR o el Ti) y usar una PEEP moderada, evitando la sobredistensión','Subir la PEEP a 10','Subir la PIP a 35'],ok:1,
@@ -49,7 +49,7 @@ exp:'El meconio inactiva el surfactante. La revisión de El Shahed (4 ensayos, 3
 no:['No se observó aumento de la mortalidad.',null,'Justamente se usa porque el meconio lo inactiva.','El lavado no está incluido en esa revisión ni es el estándar.'],
 base:'Los ácidos grasos y las proteínas del meconio desplazan e inactivan el surfactante.',ev:'F',refs:['elshahed2014']}
 ]},
-{t:'Etapa 3 · Vasodilatación pulmonar',d:{'Modo':'VAFO, MAP 16 tras reclutar','Rx':'9 espacios','IO':'26','Ecocardiograma':'Cortocircuito ductal de derecha a izquierda, función del VI conservada'},
+{sim:'ev_sam_3',t:'Etapa 3 · Vasodilatación pulmonar',d:{'Modo':'VAFO, MAP 16 tras reclutar','Rx':'9 espacios','IO':'26','Ecocardiograma':'Cortocircuito ductal de derecha a izquierda, función del VI conservada'},
 q:[
 {id:'q5',tema:'Óxido nítrico inhalado en la HTPP',p:'¿Qué afirmación sobre el óxido nítrico inhalado es correcta?',
 o:['Reduce la mortalidad en todos los recién nacidos hipoxémicos','En recién nacidos de término y casi término (sin hernia diafragmática) reduce la necesidad de ECMO; mejora la oxigenación en ~50 %; se usa a 20 ppm y funciona mejor con el pulmón reclutado','Se inicia a 80 ppm','Mejora los resultados en la hernia diafragmática'],ok:1,
@@ -72,7 +72,7 @@ cierre:'En el SAM con HTPP, la diferencia pre/posductal y el IO definen la grave
 },
 
 {
-id:'hdc',mod:6,mods:[6,3],nivel:'avanzado',sim:'hdc',
+id:'hdc',mod:6,mods:[6,3],nivel:'avanzado',sim:'ev_hdc_2',
 titulo:'Hernia diafragmática congénita: ventilación gentil',
 sub:'Manejo en sala de partos, metas de gases, modo inicial, óxido nítrico y ECMO',
 pres:{
@@ -86,8 +86,8 @@ pres:{
  'Estado respiratorio':'Intubado al nacer. AC: PIP 26, PEEP 4, FR 50, FiO₂ 1,0.',
  'Examen físico':'Abdomen excavado, latido desplazado a la derecha.',
  'Radiografía de tórax':'Asas intestinales en el hemitórax izquierdo; mediastino desplazado.',
- 'Gases (preductales)':'pH 7,21 · pCO₂ 68 · PaO₂ 52',
- 'Oxigenación':'SpO₂ preductal 82 % · posductal 64 %',
+ 'Gases (preductales)':'pH 7,31 · pCO₂ 60 · PaO₂ 50',
+ 'Oxigenación':'SpO₂ preductal 83 % · posductal 64 %',
  'Soporte actual':'AC con sonda gástrica a aspiración'},
 inicial:'Llega a la UCIN desde la sala de partos. Hay que definir metas y estrategia de ventilación.',
 obj:['Conocer el manejo de la HDC en sala de partos.','Aplicar las metas del consenso CDH EURO.','Ajustar la ventilación a esas metas.','Elegir el modo inicial y el de rescate.','Conocer la evidencia del óxido nítrico en la HDC.','Reconocer los criterios de ECMO.'],
@@ -105,11 +105,11 @@ exp:'La estrategia de «ventilación gentil» acepta hipercapnia y saturaciones 
 no:['Buscar valores normales exige presiones que lesionan el pulmón hipoplásico.',null,'La saturación posductal refleja el cortocircuito ductal; perseguirla lleva a presiones excesivas.','El pH no es la única meta; también se limita la presión.'],
 base:'El pulmón hipoplásico tiene pocos alvéolos: presiones normales para otro bebé son excesivas para él.',ev:'E',refs:['snoek2016']}
 ]},
-{t:'Etapa 2 · Primera hora en la UCIN',d:{'PIP':'26','SpO₂ pre / pos':'82 % / 64 %','pCO₂':'68','pH':'7,21'},
+{sim:'ev_hdc_2',t:'Etapa 2 · Primera hora en la UCIN',d:{'PIP':'26','SpO₂ pre / pos':'83 % / 64 %','pCO₂':'60','pH':'7,31'},
 q:[
 {id:'q3',tema:'Ajuste a las metas de ventilación gentil',p:'Con estos valores, ¿qué hace?',
 o:['Subir la PIP a 30 para mejorar la posductal','Bajar la PIP a ≤ 25: la preductal y la pCO₂ están dentro de las metas; la posductal baja no se persigue con presión','Subir la FR a 70 para llevar la pCO₂ a 40','Dar bicarbonato'],ok:1,
-exp:'La SpO₂ preductal (82 %) y la pCO₂ (68) están en rango. La PIP de 26 supera el límite de 25 y aumenta el riesgo de neumotórax y lesión. La posductal baja refleja el cortocircuito ductal por hipertensión pulmonar, no un fallo de ventilación.',
+exp:'La SpO₂ preductal (83 %) y la pCO₂ (60) están en rango. La PIP de 26 supera el límite de 25 y aumenta el riesgo de neumotórax y lesión. La posductal baja refleja el cortocircuito ductal por hipertensión pulmonar, no un fallo de ventilación.',
 no:['Más presión sobre un pulmón hipoplásico aumenta el riesgo de neumotórax contralateral.',null,'Buscar normocapnia con más ventilación lesiona el pulmón.','El bicarbonato no está indicado y genera CO₂.'],
 base:'La meta preductal refleja la oxigenación cerebral y coronaria; la posductal, el cortocircuito.',ev:'E',refs:['snoek2016']},
 {id:'q4',tema:'Modo inicial y rescate en la HDC',p:'¿Qué modo recomienda el consenso como inicial?',
@@ -118,7 +118,7 @@ exp:'El consenso CDH EURO recomienda la ventilación convencional como estrategi
 no:['No se recomienda como modo inicial de rutina.',null,'No es el modo inicial recomendado.','No es suficiente para un pulmón hipoplásico.'],
 base:'La elección del modo en la HDC se basa en el consenso y en la experiencia de los centros de referencia.',ev:'E',refs:['snoek2016']}
 ]},
-{t:'Etapa 3 · Día 1: hipoxemia progresiva',d:{'Modo':'VAFO, MAP 16','FiO₂':'1,0','SpO₂ preductal':'78 %','Ecocardiograma':'Hipertensión pulmonar suprasistémica, función del VI disminuida','Lactato':'5,5'},
+{sim:'ev_hdc_3',t:'Etapa 3 · Día 1: hipoxemia progresiva',d:{'Modo':'VAFO, MAP 16','FiO₂':'1,0','SpO₂ pre / pos':'86–88 % / 66 %','Ecocardiograma':'Hipertensión pulmonar suprasistémica, función del VI disminuida','Lactato':'5,5'},
 q:[
 {id:'q5',tema:'Óxido nítrico en la HDC',p:'¿Qué dice la evidencia sobre el óxido nítrico en la HDC?',
 o:['Reduce la mortalidad y la necesidad de ECMO','En la revisión Cochrane no mejoró los resultados, incluso fueron algo peores; su uso es selectivo y con un ventrículo izquierdo disfuncionante puede empeorar el edema pulmonar','Está indicado siempre a 40 ppm','Reemplaza a la ECMO'],ok:1,
@@ -127,7 +127,7 @@ no:['No mostró ese beneficio en la HDC.',null,'No hay indicación sistemática 
 base:'Vasodilatar el lecho pulmonar con un VI disfuncionante sube la presión en la aurícula izquierda.',ev:'C',refs:['barrington2017','snoek2016']},
 {id:'q6',tema:'Criterios de ECMO en la HDC',p:'¿Qué hallazgos son criterios de ECMO según el consenso?',
 o:['pCO₂ de 60','Imposibilidad de mantener la SpO₂ preductal > 85 % o la posductal > 70 %, acidosis respiratoria grave pese a optimizar, necesidad de PIP > 28 o MAP > 17 en VAFO, lactato ≥ 5 o IO ≥ 40 sostenido','SpO₂ posductal de 75 %','Cualquier necesidad de VAFO'],ok:1,
-exp:'El consenso CDH EURO lista como criterios la imposibilidad de mantener las metas de saturación, la acidosis respiratoria grave pese a optimizar, la necesidad de presiones altas (PIP > 28 o MAP > 17), la hipoperfusión con lactato ≥ 5 y el IO ≥ 40 sostenido. Este bebé cumple varios.',
+exp:'El consenso CDH EURO lista como criterios la imposibilidad de mantener las metas de saturación, la acidosis respiratoria grave pese a optimizar, la necesidad de presiones altas (PIP > 28 o MAP > 17), la hipoperfusión con lactato ≥ 5 y el IO ≥ 40 sostenido. Este bebé ya cumple el criterio de lactato y está cerca del límite de MAP: hay que contactar al centro con ECMO antes de que empeore.',
 no:['Está dentro de las metas.',null,'Está dentro de las metas.','La VAFO de rescate no es por sí sola criterio de ECMO.'],
 base:'La ECMO da tiempo al pulmón y a la circulación pulmonar sin presiones lesivas.',ev:'E',refs:['snoek2016']}
 ]}
@@ -136,7 +136,7 @@ cierre:'En la HDC el pulmón es hipoplásico: se intuba sin ventilar con bolsa, 
 },
 
 {
-id:'termino',mod:6,mods:[6,1],nivel:'basico',sim:'ttn',
+id:'termino',mod:6,mods:[6,1],nivel:'basico',sim:'ev_ttn_1',
 titulo:'Recién nacido de término con taquipnea: TTN, neumotórax o neumonía',
 sub:'Diagnóstico diferencial y su evolución en 24 horas',
 pres:{
@@ -152,11 +152,11 @@ pres:{
  'Radiografía de tórax':'Pulmones hiperinsuflados, trazos perihiliares, líquido en la cisura.',
  'Gases (capilar)':'pH 7,33 · pCO₂ 46',
  'Oxigenación':'SpO₂ 93 % con FiO₂ 0,35',
- 'Soporte actual':'Oxígeno por cánula'},
+ 'Soporte actual':'CPAP 5 cmH₂O'},
 inicial:'Recién nacido de término con taquipnea desde el nacimiento por cesárea sin trabajo de parto.',
 obj:['Reconocer la taquipnea transitoria y su fisiopatología.','Indicar el soporte adecuado y evitar tratamientos sin evidencia.','Reconocer y tratar el neumotórax.','Identificar signos que orientan a neumonía.'],
 etapas:[
-{t:'Etapa 1 · Primeras horas',d:{'FR':'90','FiO₂':'0,35','Rx':'Hiperinsuflación, líquido en la cisura'},
+{sim:'ev_ttn_1',t:'Etapa 1 · Primeras horas',d:{'FR':'90','FiO₂':'0,35','Rx':'Hiperinsuflación, líquido en la cisura'},
 q:[
 {id:'q1',tema:'Fisiopatología de la TTN',p:'¿Cuál es el mecanismo principal?',
 o:['Déficit de surfactante','Retraso en la reabsorción del líquido pulmonar fetal (menor activación de los canales de sodio epiteliales sin trabajo de parto)','Aspiración de meconio','Hipoplasia pulmonar'],ok:1,
@@ -169,7 +169,7 @@ exp:'La TTN es autolimitada. La CPAP ayuda a mantener el volumen pulmonar y empu
 no:['No hay evidencia que respalde su uso en la TTN.',null,'No hay déficit de surfactante que justifique esa estrategia.','No es parte del manejo estándar.'],
 base:'La presión de distensión mantiene la capacidad residual mientras se reabsorbe el líquido.',ev:'E',refs:['hagen2017']}
 ]},
-{t:'Etapa 2 · Cuatro horas: deterioro brusco',d:{'Soporte':'CPAP 6','SpO₂':'80 % con FiO₂ 0,60','Auscultación':'Disminuida a la derecha','Transiluminación':'Hemitórax derecho brillante','PA':'Estable'},
+{sim:'ev_ttn_2',t:'Etapa 2 · Cuatro horas: deterioro brusco',d:{'Soporte':'CPAP 6','SpO₂':'80 % con FiO₂ 0,60','Auscultación':'Disminuida a la derecha','Transiluminación':'Hemitórax derecho brillante','PA':'Estable'},
 q:[
 {id:'q3',tema:'Neumotórax',p:'¿Diagnóstico y conducta?',
 o:['Empeoramiento de la TTN: subir la CPAP','Neumotórax derecho: si está estable, confirmar con radiografía y vigilar; si hay inestabilidad, punción con aguja y drenaje','Neumonía: antibióticos solamente','Cardiopatía: prostaglandinas'],ok:1,
@@ -177,7 +177,7 @@ exp:'El deterioro brusco con asimetría auscultatoria y transiluminación positi
 no:['Subir la CPAP puede agrandar el neumotórax.',null,'Los signos son de fuga aérea.','La asimetría y la transiluminación apuntan al pulmón.'],
 base:'La CPAP y las presiones transpulmonares altas en recién nacidos de término que respiran vigorosamente aumentan el riesgo de fuga aérea.',ev:'E',refs:['goldsmith2022','aha2025']}
 ]},
-{t:'Etapa 3 · 24 horas',d:{'FiO₂':'0,50 y en aumento','Temperatura':'38,1 °C','Neutrófilos':'1500/mm³','PCR':'45 mg/L','Rx':'Opacidades bilaterales que no se aclaran'},
+{sim:'ev_ttn_3',t:'Etapa 3 · 24 horas',d:{'FiO₂':'0,50 y en aumento','Temperatura':'38,1 °C','Neutrófilos':'1500/mm³','PCR':'45 mg/L','Rx':'Opacidades bilaterales que no se aclaran'},
 q:[
 {id:'q4',tema:'TTN frente a neumonía',p:'¿Qué orienta a neumonía o sepsis en lugar de TTN?',
 o:['Taquipnea en las primeras horas','Empeoramiento después de las primeras horas, fiebre, neutropenia, PCR alta y opacidades que persisten','Líquido en la cisura','Cesárea sin trabajo de parto'],ok:1,
@@ -190,7 +190,7 @@ cierre:'La TTN es la causa más frecuente de taquipnea en el recién nacido de t
 },
 
 {
-id:'dbp',mod:6,mods:[6,2,5],nivel:'avanzado',sim:'dbp',
+id:'dbp',mod:6,mods:[6,2,5],nivel:'avanzado',sim:'ev_dbp_2',
 titulo:'Displasia broncopulmonar establecida: otra fisiología, otro respirador',
 sub:'Clasificación, estrategia ventilatoria, gases crónicos e hipertensión pulmonar',
 pres:{
@@ -204,7 +204,7 @@ pres:{
  'Estado respiratorio':'AC-VG: VT 5 mL/kg, FR 40, Ti 0,35 s, PEEP 6, FiO₂ 0,45.',
  'Examen físico':'Tórax hiperinsuflado, sibilancias, tiraje.',
  'Radiografía de tórax':'Áreas heterogéneas: zonas quísticas hiperinsufladas alternando con bandas fibrosas.',
- 'Gases':'pH 7,36 · pCO₂ 68 · HCO₃⁻ 38',
+ 'Gases':'pH 7,40 · pCO₂ 52 · HCO₃⁻ 32',
  'Oxigenación':'SpO₂ 90 % con FiO₂ 0,45; desaturaciones a 70 % con el llanto',
  'Soporte actual':'Tubo 3,0 · AC-VG'},
 inicial:'Sigue ventilado a las 36 semanas, con la misma estrategia que se usaba en la fase aguda del SDR.',
@@ -218,16 +218,16 @@ exp:'En la definición de Jensen, la ventilación invasiva a las 36 semanas es g
 no:['Corresponde a cánula ≤ 2 L/min.','Corresponde a cánula > 2 L/min o presión positiva no invasiva.',null,'La clasificación no depende de la FiO₂.'],
 base:'El soporte necesario a las 36 semanas refleja la gravedad.',ev:'F',refs:['jensen2019']}
 ]},
-{t:'Etapa 2 · Estrategia ventilatoria',d:{'Curva de flujo':'No vuelve a cero','Bucle flujo-volumen':'Limitación espiratoria','Episodios':'Desaturación con agitación y tórax rígido'},
+{sim:'ev_dbp_2',t:'Etapa 2 · Estrategia ventilatoria',d:{'Curva de flujo':'No vuelve a cero','Bucle flujo-volumen':'Limitación espiratoria','Episodios':'Desaturación con agitación y tórax rígido'},
 q:[
 {id:'q2',tema:'Ventilación en la displasia establecida',p:'¿Qué estrategia se adapta mejor a esta fisiología?',
 o:['Mantener VT 5 mL/kg, FR 40 y Ti 0,35 como en el SDR','VT mayores, FR más bajas, Ti más largos y PEEP más alta para sostener vías aéreas malácicas, aceptando hipercapnia compensada','VAFO a 15 Hz','Bajar la PEEP a 4 para reducir la hiperinsuflación'],ok:1,
 exp:'La displasia establecida es una enfermedad heterogénea con resistencia alta y constantes de tiempo largas, espacio muerto aumentado y frecuentemente traqueobroncomalacia. Las FR altas con Ti cortos dejan zonas sin ventilar y atrapan gas. Se recomiendan VT más altos, FR bajas, Ti largos y PEEP más alta para mantener abiertas las vías aéreas que colapsan; los valores concretos se individualizan y la evidencia es sobre todo de expertos.',
 no:['Es la estrategia del pulmón agudo homogéneo con τ cortas, no la de la displasia.',null,'La VAFO a frecuencias altas no se adapta a constantes de tiempo largas.','Con malacia, menos PEEP aumenta el colapso espiratorio y los episodios de desaturación.'],
 base:'Las regiones con τ largas necesitan tiempo para llenarse y vaciarse.',ev:'C',refs:['goldsmith2022']},
-{id:'q3',tema:'Acidosis respiratoria crónica compensada',p:'pH 7,36 · pCO₂ 68 · HCO₃⁻ 38. ¿Qué hace?',
+{id:'q3',tema:'Acidosis respiratoria crónica compensada',p:'pH 7,40 · pCO₂ 52 · HCO₃⁻ 32. ¿Qué hace?',
 o:['Subir la FR a 60 para normalizar la pCO₂','Es una acidosis respiratoria crónica compensada: no perseguir una pCO₂ normal; ajustar según el pH, el trabajo respiratorio y el crecimiento','Dar acetazolamida','Bajar el VT'],ok:1,
-exp:'El riñón retuvo bicarbonato y el pH es casi normal. Bajar la pCO₂ rápido produciría una alcalosis metabólica y exigiría una ventilación lesiva. Lo importante es que el pH sea aceptable, el bebé no trabaje en exceso y crezca.',
+exp:'El riñón retuvo bicarbonato y el pH está en rango normal. Bajar la pCO₂ rápido produciría una alcalosis metabólica y exigiría una ventilación lesiva. Lo importante es que el pH sea aceptable, el bebé no trabaje en exceso y crezca.',
 no:['Más FR empeora el atrapamiento y la lesión.',null,'No está indicada como tratamiento de rutina.','Bajar el VT aumenta la proporción de espacio muerto.'],
 base:'En los trastornos crónicos, la compensación renal lleva el pH cerca de lo normal.',ev:'E',refs:['goldsmith2022']}
 ]},
@@ -244,7 +244,7 @@ cierre:'La displasia grave es otra enfermedad: heterogénea, con constantes de t
 },
 
 {
-id:'shci',mod:6,mods:[6,5],nivel:'avanzado',sim:'shci',
+id:'shci',mod:6,mods:[6,5],nivel:'avanzado',sim:'ev_shci_1',
 titulo:'Ventrículo único: cuando más oxígeno es peor',
 sub:'Síndrome de corazón izquierdo hipoplásico antes de la cirugía',
 pres:{
@@ -259,16 +259,16 @@ pres:{
  'Examen físico':'Pulsos saltones, hígado a 3 cm.',
  'Radiografía de tórax':'Cardiomegalia, aumento de la trama vascular pulmonar.',
  'Gases':'pH 7,42 · pCO₂ 35 · PaO₂ 62',
- 'Oxigenación':'SpO₂ 92 % · saturación venosa en la cava superior 52 %',
+ 'Oxigenación':'SpO₂ 90 % · saturación venosa en la cava superior 50 %',
  'Soporte actual':'AC'},
-inicial:'Satura 92 % en aire ambiente, pero la perfusión empeora.',
+inicial:'Satura 90 % en aire ambiente, pero la perfusión empeora.',
 obj:['Estimar la relación Qp:Qs en la circulación de ventrículo único.','Comprender por qué el oxígeno y la hipocapnia pueden empeorar la perfusión sistémica.','Conocer la evidencia sobre hipercapnia frente a hipoxia inspirada.','Ajustar el respirador para equilibrar las circulaciones.'],
 etapas:[
-{t:'Etapa 1 · Equilibrio de circulaciones',d:{'SaO₂':'92 %','SvO₂ (cava superior)':'52 %','SpvO₂ supuesta':'98 %'},
+{sim:'ev_shci_1',t:'Etapa 1 · Equilibrio de circulaciones',d:{'SaO₂':'90 %','SvO₂ (cava superior)':'50 %','SpvO₂ supuesta':'98 %'},
 q:[
 {id:'q1',tema:'Cálculo de Qp:Qs',p:'¿Cuál es la relación Qp:Qs estimada?',
-o:['≈ 1','≈ 2','≈ 6,7','≈ 0,5'],ok:2,
-exp:'En la circulación de ventrículo único, la sangre aórtica y la pulmonar tienen la misma saturación. Qp:Qs = (SaO₂ − SvO₂) / (SpvO₂ − SpaO₂) = (92 − 52) / (98 − 92) = 40/6 ≈ 6,7. El flujo pulmonar es casi 7 veces el sistémico: hay hiperflujo pulmonar y «robo» de la circulación sistémica.',
+o:['≈ 1','≈ 2','≈ 5','≈ 0,5'],ok:2,
+exp:'En la circulación de ventrículo único, la sangre aórtica y la pulmonar tienen la misma saturación. Qp:Qs = (SaO₂ − SvO₂) / (SpvO₂ − SpaO₂) = (90 − 50) / (98 − 90) = 40/8 = 5. El flujo pulmonar es 5 veces el sistémico: hay hiperflujo pulmonar y «robo» de la circulación sistémica.',
 no:['Correspondería a un equilibrio que no hay aquí.','Subestima el resultado.',null,'Indicaría más flujo sistémico que pulmonar.'],
 base:'Principio de Fick: el flujo es inversamente proporcional a la diferencia de contenido de O₂ en cada circuito.',ev:'E',refs:['goldsmith2022']},
 {id:'q2',tema:'Oxígeno e hiperventilación en el ventrículo único',p:'¿Qué conducta es correcta?',
@@ -277,7 +277,7 @@ exp:'El oxígeno y la hipocapnia dilatan los vasos pulmonares: más sangre va a 
 no:['Empeora el hiperflujo pulmonar.',null,'La hipocapnia baja la resistencia pulmonar y empeora el robo.','Una PEEP alta puede afectar el retorno venoso sin equilibrar las circulaciones de forma controlada.'],
 base:'El ventrículo único reparte su gasto según la relación entre la resistencia pulmonar y la sistémica.',ev:'E',refs:['tabbutt2001','goldsmith2022']}
 ]},
-{t:'Etapa 2 · Gases inspirados',d:{'Propuesta del equipo':'Aumentar la resistencia pulmonar con hipercapnia controlada'},
+{sim:'ev_shci_1',t:'Etapa 2 · Gases inspirados',d:{'Propuesta del equipo':'Aumentar la resistencia pulmonar con hipercapnia controlada'},
 q:[
 {id:'q3',tema:'Hipercapnia frente a hipoxia inspirada',p:'¿Qué mostró el estudio de Tabbutt (2001) en el SHCI ventilado?',
 o:['Que la hipoxia inspirada (FiO₂ 0,17) mejoró la oxigenación cerebral más que la hipercapnia','Que ambas bajaron la Qp:Qs, pero solo la hipercapnia mejoró la saturación cerebral y la presión arterial','Que ninguna cambió la Qp:Qs','Que el oxígeno al 100 % fue lo mejor'],ok:1,
