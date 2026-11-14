@@ -320,8 +320,36 @@ ev_nec24_1:{caso:'nec24',et:1,n:'Caso evaluable · 24 sem · enterocolitis y dis
  ref:'Goldsmith 2022.',
  kg:.78,cpk:.85,R:180,mOpen:6.5,mW:1.3,mOver:13,sh0:.5,pphn:.1,vdk:3.4,vco2:7.5,hco3:22,drive:.1,rrP:55,bp:26,leak:.1,duct:.5,ev0:['abd'],
  goal:{co2:[45,60],sat:[90,94],vt:[5,6],vthf:[1.5,2.5],fio2:40},
- start:ST({peep:6,pip:24,ti:.3,rr:50,fio2:50,vt:5.5,vg:true,pmax:25}),t:{co2:62,sat:90}}
-
+ start:ST({peep:6,pip:24,ti:.3,rr:50,fio2:50,vt:5.5,vg:true,pmax:25}),t:{co2:62,sat:90}},
+/* ---- Módulo 8 · Hemodinamia e inotrópicos ---- */
+ev_hipo26_1:{caso:'hipo26',et:1,n:'Caso evaluable · 26 sem · 780 g · flujo sistémico bajo',
+ desc:'<b>6 h de vida, 780 g, pulmón bien expandido.</b> AC-VG VT 5 mL/kg, PEEP 7, FR 50, FiO₂ 35 %: PA media ~24, relleno 4 s, lactato 4,6. La PEEP probablemente excede lo necesario.',
+ learn:'Bajá la PEEP a 5–6 y mirá la PA en el monitor: con menos MAP mejora el retorno venoso y la PA sube, sin perder SpO₂ (el pulmón ya estaba reclutado). Los inotrópicos no se titulan en el simulador.',
+ ref:'de Waal, ADC F&N 2007; Kluckow & Evans, ADC F&N 2000.',
+ kg:.78,cpk:.8,R:150,mOpen:4.5,mW:1.2,mOver:8,sh0:.5,pphn:.16,vdk:3,vco2:7,hco3:20,drive:.2,rrP:50,bp:27,leak:.05,lac0:4.6,
+ goal:{co2:[45,55],sat:[90,94],vt:[4.5,6],vthf:[1.5,2.5],fio2:30},
+ start:ST({peep:7,pip:20,ti:.3,rr:50,fio2:35,vt:5,vg:true,pmax:25}),t:{co2:50,sat:92}},
+ev_shock38_1:{caso:'shock38',et:1,n:'Caso evaluable · término · shock séptico con HPPRN',
+ desc:'<b>39 semanas, 3400 g, sepsis precoz.</b> AC PIP 26, PEEP 6, FR 50, FiO₂ 100 %: SpO₂ pre ~87 %, pos ~68 %, pCO₂ ~46, PA media ~30 con dopamina.',
+ learn:'Calculá el IO con la MAP del respirador. Probá el ONi (botón) y mirá la diferencia pre-posductal. Evitá hiperventilar y no subas la MAP por encima de lo necesario: mirá la PA.',
+ ref:'Abman, Circulation 2015 (AHA/ATS); Barrington, Cochrane 2017; Davis, CCM 2017.',
+ kg:3.4,cpk:.3,R:70,mOpen:6,mW:1.3,mOver:15.5,sh0:.25,pphn:.505,vdk:3.2,vco2:8.5,hco3:23,drive:.1,rrP:50,bp:31,leak:.03,duct:1,lac0:6.2,
+ goal:{co2:[40,50],sat:[90,97],vt:[4,6],vthf:[1.5,2.5],fio2:60,satPost:85},
+ start:ST({peep:6,pip:26,ti:.35,rr:50,fio2:100,vt:5,pmax:30,hfMap:14,f:10,amp:35,vthf:2,ampMax:45,ie:2}),t:{co2:46,sat:87,satPost:68}},
+ev_shock38_2:{caso:'shock38',et:2,n:'Caso evaluable · término · HPPRN con sobredistensión',
+ desc:'<b>Mismo paciente, 2 horas después.</b> Se subió a PEEP 8 y PIP 28 (MAP ~17): la SpO₂ y la PA caen en forma progresiva; radiografía con 11 espacios.',
+ learn:'Volvé a PEEP 6 y PIP ~26 y mirá cómo mejoran a la vez la SpO₂ pre/posductal y la PA: la sobredistensión aumenta la resistencia pulmonar y reduce el retorno venoso.',
+ ref:'Goldsmith 2022; Abman, Circulation 2015.',
+ kg:3.4,cpk:.3,R:70,mOpen:6,mW:1.3,mOver:15.5,sh0:.25,pphn:.505,vdk:3.2,vco2:8.5,hco3:23,drive:.1,rrP:50,bp:31,leak:.03,duct:1,lac0:6.5,
+ goal:{co2:[40,50],sat:[90,97],vt:[4,6],vthf:[1.5,2.5],fio2:60,satPost:85,mapMax:14},
+ start:ST({peep:8,pip:28,ti:.35,rr:50,fio2:100,vt:5,pmax:35,hfMap:14,f:10,amp:35,vthf:2,ampMax:45,ie:2})},
+ev_postcx_2:{caso:'postcx',et:2,n:'Caso evaluable · posoperatorio cardíaco · bajo gasto con edema',
+ desc:'<b>Switch arterial, 12 h de posoperatorio, 3200 g.</b> AC PIP 20, PEEP 4, FR 30, FiO₂ 60 %: edema pulmonar, lactato 4,8, PA media ~36 con milrinona, dopamina y adrenalina.',
+ learn:'Subí la PEEP a 6–8: mejora el edema y la oxigenación y, en el VI deprimido, la presión positiva baja la poscarga. Si llevás la MAP demasiado alto, la PA cae (retorno venoso).',
+ ref:'Goldsmith 2022; Hoffman, Circulation 2003.',
+ kg:3.2,cpk:.55,R:60,mOpen:7,mW:1.3,mOver:12.5,sh0:.6,pphn:.03,vdk:2.1,vco2:4.5,hco3:22,drive:0,rrP:40,bp:36,leak:.03,lac0:4.8,
+ goal:{co2:[40,50],sat:[94,99],vt:[4.5,6.5],vthf:[1.5,2.5],fio2:40},
+ start:ST({peep:4,pip:20,ti:.4,rr:30,fio2:60,vt:5,pmax:30}),t:{co2:45,sat:90}}
 };
 Object.keys(S).forEach(k=>{const c=S[k];c.grp='eval';c.desc=c.desc+' '+H(c.caso,c.et)});
 window.SIM_EVAL=S;

@@ -1,0 +1,231 @@
+{
+"elgan26": {
+"q1": {
+"o": [
+"IMV no sincronizada limitada por presión: más estable en < 800 g",
+"AC sincronizada con volumen objetivo (volumen garantizado)",
+"VAFO electiva: en Cochrane redujo la mortalidad frente a la convencional",
+"PSV con volumen garantizado y sin frecuencia de respaldo"
+],
+"ok": 1,
+"no": [
+"La falta de sincronía y la presión fija aumentan la variabilidad del volumen; el volumen objetivo tiene mejor evidencia.",
+null,
+"En la revisión de Cools la VAFO electiva no cambió la mortalidad; la reducción de displasia fue pequeña e inconsistente.",
+"Sin frecuencia de respaldo, un prematuro extremo con esfuerzo irregular queda expuesto a apneas."
+]
+},
+"q2": {
+"o": [
+"3 mL/kg (2,4 mL) para minimizar el volutrauma la primera hora",
+"4–6 mL/kg (≈ 4–5 mL), ajustado luego por la pCO₂ y la mecánica",
+"7–8 mL/kg para compensar el espacio muerto del sensor de flujo",
+"PIP fija de 25 y ajustar según la expansión torácica"
+],
+"ok": 1,
+"no": [
+"Por debajo de ~4 mL/kg el VT se acerca al espacio muerto: aumentan la pCO₂ y el trabajo respiratorio.",
+null,
+"Compensar todo el espacio muerto con volúmenes altos expone a volutrauma.",
+"Fijar la presión deja que el volumen cambie con la compliance: es lo que el volumen objetivo evita."
+]
+},
+"q3": {
+"o": [
+"La PIP baja enseguida: conviene fijar la Pmax igual a la PIP previa",
+"Obstrucción transitoria con PIP en ascenso: dejar margen en la Pmax",
+"El VG compensa todo: la Pmax puede quedar 1 cmH₂O sobre la PIP",
+"Pasar a presión limitada 1 hora para evitar picos durante el surfactante"
+],
+"ok": 1,
+"no": [
+"Al principio el surfactante líquido aumenta la resistencia; la mejoría de la compliance llega después.",
+null,
+"El VG solo puede subir la PIP hasta la Pmax: con un margen tan chico el VT queda corto.",
+"No hace falta cambiar de modo; sí programar bien la Pmax."
+]
+},
+"q4": {
+"o": [
+"No cambiar nada: con pCO₂ 33 y pH 7,42 el objetivo está logrado",
+"Bajar la FiO₂ a SpO₂ 90–94 % y el VT objetivo ~0,5 mL/kg",
+"Bajar la FR de respaldo de 50 a 30 y mantener la FiO₂ en 0,25",
+"Subir la PEEP a 8 para estabilizar el volumen y bajar la FiO₂"
+],
+"ok": 1,
+"no": [
+"Una pCO₂ de 33 en un prematuro extremo es hipocapnia, asociada a lesión cerebral; además hay hiperoxia.",
+null,
+"Deja sin corregir la hiperoxia (SpO₂ 98 %) y, si el bebé dispara por encima del respaldo, no cambia la ventilación.",
+"Con una compliance que mejora, más PEEP puede sobredistender; no corrige la hipocapnia."
+]
+},
+"q5": {
+"o": [
+"Subir la Pmax a 35 y la FiO₂ a 1,0 hasta recuperar el VT",
+"Ventilar a mano, confirmar el tubo con CO₂ espirado y aplicar DOPE",
+"Sedar y relajar: el VT bajo es por lucha con el respirador",
+"Pedir una radiografía urgente antes de tocar el tubo o el circuito"
+],
+"ok": 1,
+"no": [
+"Subir la presión sin conocer la causa no resuelve una obstrucción y puede producir neumotórax si el tubo está en un bronquio.",
+null,
+"La sedación no corrige un tubo obstruido o desplazado y retrasa el diagnóstico.",
+"Con un VT casi nulo no se espera la radiografía: primero se evalúa el tubo y se ventila a mano."
+]
+},
+"q6": {
+"o": [
+"La aspiración abierta breve no cambia el volumen pulmonar",
+"Pérdida similar; recuperación más lenta con la abierta",
+"La cerrada evita toda pérdida de volumen y no altera el VG",
+"Aspirar cada 2 horas de rutina previene nuevos tapones"
+],
+"ok": 1,
+"no": [
+"Toda aspiración genera presión negativa y la desconexión anula la PEEP.",
+null,
+"La aspiración cerrada también quita volumen y altera la medición del VG.",
+"La aspiración de rutina sin indicación expone a derreclutamiento, bradicardia e infección."
+]
+},
+"q7": {
+"o": [
+"Bajar la PEEP a 4 para mejorar el retorno venoso y el gasto",
+"Subir la PEEP 1–2 cmH₂O y vigilar la hemodinamia",
+"Subir la PEEP a 8 porque reduce el cortocircuito ductal",
+"Subir la FiO₂ para favorecer el cierre ductal por oxígeno"
+],
+"ok": 1,
+"no": [
+"Bajar la PEEP con edema empeora el colapso alveolar y la oxigenación.",
+null,
+"En el estudio de Fajardo, subir la PEEP de 5 a 8 no modificó de forma significativa el cortocircuito ductal: ayuda al pulmón, no trata el ductus.",
+"La FiO₂ alta no es un tratamiento del ductus, expone a hiperoxia y baja la resistencia pulmonar."
+]
+},
+"q8": {
+"o": [
+"SIMV con FR 10 sin presión de soporte para entrenar los músculos",
+"Dejar que el VG baje la PIP sin llevar el VT bajo ~4 mL/kg",
+"Bajar el VT objetivo 0,5 mL/kg por día hasta llegar a 3 mL/kg",
+"Bajar la FR de respaldo a 10 aunque el bebé dispara a 55"
+],
+"ok": 1,
+"no": [
+"Las respiraciones espontáneas sin soporte por un tubo de 2,5 mm cargan con resistencia y espacio muerto: el bebé se fatiga.",
+null,
+"Con VT tan bajos aumenta la ventilación del espacio muerto y el trabajo respiratorio.",
+"Si dispara a 55, bajar el respaldo no cambia la ventilación y lo expone a apneas sin respaldo."
+]
+},
+"q9": {
+"o": [
+"Asegurar la cafeína (dosis de carga si no la recibió)",
+"Dexametasona de rutina 24 horas antes de extubar a todos",
+"Prueba de 2 horas en CPAP endotraqueal antes de extubar",
+"Ayuno de 12 horas para reducir el riesgo de aspiración"
+],
+"ok": 0,
+"no": [
+null,
+"Los corticoides no se dan de rutina; se reservan para bebés que siguen ventilados después de 1–2 semanas.",
+"Respirar 2 horas por un tubo de 2,5 mm sin soporte agota al bebé y puede llevar a un falso fracaso.",
+"El ayuno no mejora la extubación y perjudica la nutrición."
+]
+},
+"q10": {
+"o": [
+"Sin displasia: ya no recibe presión positiva",
+"Grado 1: cánula ≤ 2 L/min a las 36 semanas",
+"Grado 2: recibe oxígeno suplementario a las 36 semanas",
+"Grado 1 solo si la FiO₂ es < 0,30; si no, grado 2"
+],
+"ok": 1,
+"no": [
+"En esta definición la cánula a las 36 semanas ya define displasia.",
+null,
+"El grado depende del modo de soporte, no de recibir oxígeno.",
+"La definición de Jensen no usa la FiO₂ para asignar el grado."
+]
+}
+},
+"asinc": {
+"q2": {
+"o": [
+"Taquipnea por dolor: analgesia y reevaluar la FR",
+"Autociclado por la fuga: compensarla o ajustar el trigger",
+"Hipoxemia leve que estimula el centro respiratorio: subir la FiO₂",
+"Sepsis temprana con taquipnea: hemocultivos y antibióticos"
+],
+"ok": 1,
+"no": [
+"Sin esfuerzos visibles, los ciclos no son del bebé.",
+null,
+"La SpO₂ es adecuada y no hay esfuerzos: la hipoxemia no explica los ciclos.",
+"No hay datos de infección; la explicación es mecánica."
+]
+},
+"q3": {
+"o": [
+"Funciona igual: el VG regula sobre el VT inspirado, que no tiene fuga",
+"Regula sobre el VTe: con fuga grande la regulación es poco fiable",
+"Sube la PEEP para sellar la fuga y así mantener el VT",
+"Apaga la compensación de fuga para medir mejor el VT espirado"
+],
+"ok": 1,
+"no": [
+"Los respiradores neonatales suelen regular sobre el VT espirado, y el inspirado también incluye la fuga.",
+null,
+"El VG ajusta la PIP, no la PEEP; no puede sellar una fuga alrededor del tubo.",
+"La compensación de fuga no se apaga sola, y apagarla empeoraría el trigger."
+]
+},
+"q4": {
+"o": [
+"Esfuerzos inspiratorios prolongados por hambre de aire",
+"La fuga sostiene el flujo sobre el umbral: subir el % de terminación",
+"La presión de soporte es baja y el bebé alarga cada inspiración",
+"El trigger es demasiado sensible y vuelve a disparar dentro de cada ciclo"
+],
+"ok": 1,
+"no": [
+"Que todas duren exactamente el Ti máximo indica un límite del respirador, no el patrón del bebé.",
+null,
+"Más presión aumentaría el flujo de fuga y empeoraría el problema.",
+"La sensibilidad del trigger afecta el inicio de la inspiración, no su terminación."
+]
+},
+"q5": {
+"o": [
+"Necesita más FiO₂: la taquipnea es por hipoxemia",
+"Espontáneas sin soporte por tubo fino: volver a AC o sumar PS",
+"Bajar la PEEP a 3 para facilitar la espiración y reducir el trabajo",
+"Es el destete esperado: esperar 6 horas y repetir los gases"
+],
+"ok": 1,
+"no": [
+"La SpO₂ no es el problema principal: hay hipoventilación y fatiga.",
+null,
+"Una PEEP baja aumenta el colapso alveolar y el trabajo respiratorio.",
+"Taquipnea, tiraje y acidosis respiratoria son un fracaso, no un destete normal."
+]
+},
+"q6": {
+"o": [
+"Autociclado por agua acumulada en el circuito",
+"Disparos fallidos: bajar el umbral del trigger",
+"Hipo frecuente que no requiere cambios en el respirador",
+"Atrapamiento aéreo por Ti largo: bajar el Ti a 0,25 s"
+],
+"ok": 1,
+"no": [
+"El autociclado es lo opuesto: ciclos sin esfuerzo.",
+null,
+"El hipo tiene un patrón brusco y rítmico; aquí la clave es la relación entre esfuerzo y disparo.",
+"El atrapamiento puede dificultar el disparo, pero el patrón descrito apunta al umbral del trigger."
+]
+}
+}
+}

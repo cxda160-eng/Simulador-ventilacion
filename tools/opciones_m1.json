@@ -1,0 +1,221 @@
+{
+"sdr30": {
+"q1": {
+"o": [
+"FiO₂ 0,60 inicial y descenso progresivo cuando la SpO₂ preductal supere 90 %",
+"FiO₂ 0,21–0,30 con mezclador, titulada según la SpO₂ preductal de cada minuto",
+"FiO₂ 0,30 fija los primeros 10 minutos para no generar oscilaciones de oxigenación",
+"Aire ambiente sin titular hasta los 10 minutos si la FC se mantiene > 100 lpm"
+],
+"ok": 1,
+"no": [
+"Arrancar con 0,60 expone a hiperoxia en la transición: a esta edad las guías proponen empezar con 0,21–0,30 y subir según la SpO₂.",
+null,
+"La FiO₂ no se fija: se ajusta minuto a minuto según la SpO₂ preductal y sus metas.",
+"Una FC > 100 lpm no asegura una oxigenación adecuada: la FiO₂ se titula siempre según la SpO₂ preductal."
+]
+},
+"q2": {
+"o": [
+"Intubación y surfactante profiláctico por tener < 32 semanas, quejido y tiraje",
+"CPAP ≥ 6 cmH₂O por máscara o piezas nasales y surfactante de rescate si hace falta",
+"Pieza en T con PIP 20–25 hasta que desaparezca el quejido y luego pasar a CPAP",
+"Oxígeno a flujo libre al 40 % y reevaluar a los 10 minutos antes de indicar presión"
+],
+"ok": 1,
+"no": [
+"La profilaxis sistemática se abandonó: la CPAP temprana mostró resultados iguales o mejores con menos intubaciones.",
+null,
+"Ventilar con presión positiva a un bebé que respira no está indicado y expone a volutrauma.",
+"El flujo libre no da presión de distensión: el pulmón sin surfactante sigue colapsando."
+]
+},
+"q3": {
+"o": [
+"Esperar: en CPAP el umbral de surfactante es FiO₂ > 0,40 sostenida 2 horas",
+"Dar surfactante ahora: necesita FiO₂ > 0,30 con CPAP ≥ 6 cmH₂O",
+"Subir la CPAP a 8 y dar surfactante si la FiO₂ sigue > 0,30 a las 6 horas",
+"Intubar, ventilar y decidir el surfactante según la radiografía de control"
+],
+"ok": 1,
+"no": [
+"El umbral del consenso europeo es FiO₂ > 0,30, no 0,40: esperar retrasa el tratamiento.",
+null,
+"Demorar 6 horas sin indicación prolonga la exposición a oxígeno y aumenta el riesgo de fuga aérea; el criterio ya se cumple.",
+"No hace falta ventilar para dar surfactante, y la radiografía ya es compatible con SDR."
+]
+},
+"q4": {
+"o": [
+"INSURE: intubar, dar surfactante, ventilar 1–2 horas y extubar a CPAP",
+"LISA/MIST: catéter fino en la tráquea con el bebé en CPAP",
+"Surfactante nebulizado por la interfaz de CPAP para evitar la laringoscopia",
+"Intubar y ventilar en VG hasta que la FiO₂ baje de 0,30, luego extubar"
+],
+"ok": 1,
+"no": [
+"El INSURE es una alternativa válida, pero cuando el equipo tiene experiencia se prefiere LISA porque evita la ventilación con presión positiva.",
+null,
+"La nebulización sigue siendo experimental y no se recomienda de rutina.",
+"Mantener la ventilación tras el surfactante expone a lesión pulmonar sin beneficio."
+]
+},
+"q5": {
+"o": [
+"Acidosis respiratoria crónica compensada: el HCO₃⁻ de 25 ya refleja retención renal",
+"Acidosis respiratoria aguda; tolerable mientras el pH se mantenga > 7,22",
+"Acidosis mixta: el EB −2 indica un componente metabólico que hay que corregir",
+"Acidosis respiratoria aguda que obliga a intubar porque la pCO₂ supera 55"
+],
+"ok": 1,
+"no": [
+"Un HCO₃⁻ de 25 es normal: en la acidosis crónica estaría claramente elevado.",
+null,
+"Un EB de −2 está dentro del rango normal: no hay componente metabólico relevante.",
+"La pCO₂ aislada no define la intubación: se integra con el pH, la FiO₂, las apneas y el trabajo respiratorio."
+]
+},
+"q6": {
+"o": [
+"85–89 %, con alarmas en 84 y 90 %",
+"90–94 %, con alarmas en 89 y 95 %",
+"91–95 %, con alarmas en 90 y 96 %",
+"88–92 %, con alarmas en 87 y 93 %"
+],
+"ok": 1,
+"no": [
+"En NeOProM el rango bajo aumentó la mortalidad y la enterocolitis.",
+null,
+"Es el rango alto de los ensayos: más tratamiento de retinopatía; el consenso europeo recomienda 90–94 %.",
+"No es el rango recomendado; su límite inferior se superpone con el rango asociado a mayor mortalidad."
+]
+},
+"q7": {
+"o": [
+"Cafeína a 20 mg/kg/día de citrato sin carga y bajar la CPAP a 4",
+"Citrato de cafeína: carga 20 mg/kg y mantenimiento 5–10 mg/kg/día",
+"Teofilina: su efecto sobre el diafragma supera al de la cafeína",
+"Pasar a NIPPV y diferir la cafeína hasta confirmar las apneas con poligrafía"
+],
+"ok": 1,
+"no": [
+"Ese esquema no corresponde a las dosis recomendadas (carga 20 mg/kg y mantenimiento 5–10 mg/kg/día) y bajar la CPAP no ayuda.",
+null,
+"La cafeína es la metilxantina de elección: mayor margen terapéutico y vida media que permite una dosis diaria.",
+"Las apneas con bradicardia ya están documentadas: diferir la cafeína no tiene justificación."
+]
+},
+"q8": {
+"o": [
+"Es equivalente a la CPAP como soporte primario si el flujo es ≥ 6 L/min",
+"Como soporte primario fracasa más que la CPAP; como destete es razonable",
+"Fue no inferior tras la extubación solo en ≥ 32 semanas, así que aquí no aplica",
+"Con la boca cerrada genera una PEEP medible y estable, equivalente a la CPAP"
+],
+"ok": 1,
+"no": [
+"En HIPSTER el alto flujo tuvo más fracasos que la CPAP como soporte primario.",
+null,
+"El ensayo de Manley incluyó menores de 32 semanas.",
+"La presión que genera es variable y no se mide de rutina."
+]
+}
+},
+"postext": {
+"q1": {
+"o": [
+"CPAP 5 cmH₂O: en < 28 semanas la NIPPV no reduce el fracaso de extubación",
+"NIPPV (idealmente sincronizada); la CPAP adecuada es una alternativa",
+"Cánula de alto flujo 6–8 L/min: no inferior a la CPAP en < 28 semanas",
+"VAFO nasal de rutina: es el soporte con evidencia más sólida en < 28 semanas"
+],
+"ok": 1,
+"no": [
+"La revisión Cochrane mostró menos fracaso de extubación con NIPPV frente a CPAP.",
+null,
+"Los ensayos de alto flujo incluyeron pocos menores de 28 semanas: no se demostró no inferioridad en ese grupo.",
+"Los ensayos de VAFO nasal incluyeron sobre todo prematuros de 25 semanas o más; no es el soporte con evidencia más sólida en este grupo."
+]
+},
+"q2": {
+"o": [
+"Garantiza el VT programado porque el respirador compensa la fuga nasal",
+"Aumenta la MAP y puede aumentar el VT; la ventaja de sincronizar no está clara",
+"Solo funciona sincronizada: la NIPPV no sincronizada no reduce el fracaso",
+"Actúa sobre todo estimulando el centro respiratorio, de forma similar a la cafeína"
+],
+"ok": 1,
+"no": [
+"Con fuga variable y la vía aérea superior en el medio, el volumen que llega al pulmón no está garantizado.",
+null,
+"Hay ensayos con NIPPV no sincronizada que redujeron la reintubación frente a la CPAP; la ventaja de sincronizar sigue en estudio.",
+"Su efecto es mecánico (presión media y volumen), no farmacológico sobre el centro respiratorio."
+]
+},
+"q3": {
+"o": [
+"Subir la PEEP nasal a 9 y la PIP a 25 y repetir los gases en 2 horas",
+"Reintubar: apneas con bolsa, acidosis respiratoria grave y FiO₂ > 0,40",
+"Dar una segunda carga de cafeína y reevaluar antes de decidir la reintubación",
+"Pasar a VAFO nasal y reintubar solo si la pCO₂ supera 100 mmHg"
+],
+"ok": 1,
+"no": [
+"Escalar el soporte nasal con apneas que requieren bolsa y pH 7,09 demora una reintubación inevitable.",
+null,
+"Con apneas que ya requieren bolsa y acidosis grave, esperar la respuesta a la cafeína expone a hipoxemia y bradicardia.",
+"Fijar un umbral tan alto ignora las apneas y la FiO₂, que ya definen el fracaso."
+]
+},
+"q4": {
+"o": [
+"Hidrocortisona entre los días 14 y 28: mejora la supervivencia sin displasia",
+"Curso corto y decreciente de dexametasona en dosis baja",
+"Dexametasona 0,5 mg/kg/día por 42 días: el esquema con mejor evidencia",
+"Ningún corticoide: están contraindicados por debajo de las 28 semanas"
+],
+"ok": 1,
+"refs": [
+"sweet2023",
+"doyle2006",
+"watterberg2022"
+],
+"no": [
+"En el ensayo de Watterberg la hidrocortisona tardía no aumentó de forma significativa la supervivencia sin displasia.",
+null,
+"Los esquemas altos y prolongados se abandonaron por sus efectos adversos neurológicos.",
+"No están contraindicados: un curso corto en dosis baja es una opción reconocida."
+]
+},
+"q5": {
+"o": [
+"Fue superior a la CPAP en < 28 semanas, con menos reintubaciones",
+"No inferior en < 32 semanas y menos trauma nasal, con pocos < 28",
+"Fue no inferior solo con flujos ≥ 8 L/min, en cualquier edad gestacional",
+"Fue inferior a la CPAP tras la extubación y por eso dejó de recomendarse"
+],
+"ok": 1,
+"no": [
+"No mostró superioridad, y los menores de 28 semanas fueron pocos.",
+null,
+"El ensayo no definió la no inferioridad por un umbral de flujo.",
+"El resultado fue de no inferioridad, no de inferioridad."
+]
+},
+"q6": {
+"o": [
+"Apnea obstructiva por flexión del cuello: reposicionar y subir la PEEP a 9",
+"Pérdida de presión por la boca: chupete o mentonera y revisar la interfaz",
+"Derreclutamiento por fatiga: reintubar porque la NIPPV ya fracasó",
+"Autociclado por la fuga: subir el umbral del trigger nasal"
+],
+"ok": 1,
+"no": [
+"El patrón es concordante con el llanto y la caída de presión en la interfaz, no con una obstrucción posicional.",
+null,
+"Es un problema mecánico transitorio: antes de reintubar se corrige la fuga.",
+"El autociclado agrega ciclos; no explica la caída de la presión medida ni la desaturación con el llanto."
+]
+}
+}
+}

@@ -1,0 +1,342 @@
+{
+"sam": {
+"q1": {
+"o": [
+"Error del oxímetro por mala perfusión distal",
+"Cortocircuito de derecha a izquierda por el ductus",
+"Cortocircuito de derecha a izquierda por el foramen oval",
+"Cardiopatía con hiperflujo pulmonar y robo sistémico"
+],
+"ok": 1,
+"no": [
+"Una diferencia constante entre territorios es un signo clínico, no un artefacto.",
+null,
+"El cortocircuito auricular desatura igual la mano derecha y los pies: no genera diferencia pre/posductal.",
+"El hiperflujo pulmonar no produce este patrón."
+]
+},
+"q3": {
+"o": [
+"Subir la FR a 70 para bajar la pCO₂ y la resistencia pulmonar",
+"Alargar el Te y usar PEEP moderada sin sobredistender",
+"Subir la PEEP a 10 para abrir las vías obstruidas por meconio",
+"Subir la PIP a 35 para vencer la obstrucción por meconio"
+],
+"ok": 1,
+"no": [
+"Más FR acorta el Te y empeora el atrapamiento.",
+null,
+"Una PEEP alta sobre un pulmón ya hiperinsuflado aumenta el riesgo de fuga aérea.",
+"Más presión agrava la hiperinsuflación y el riesgo de neumotórax."
+]
+},
+"q4": {
+"o": [
+"Aumenta la mortalidad por obstrucción aguda del tubo",
+"Reduce la progresión a ECMO; sin efecto claro en la mortalidad",
+"Reduce la mortalidad a la mitad si se administra en la primera hora",
+"Equivale al lavado con surfactante diluido, que es el estándar"
+],
+"ok": 1,
+"no": [
+"No se observó aumento de la mortalidad.",
+null,
+"No mostró un efecto claro sobre la mortalidad.",
+"El lavado se estudió aparte y no es el estándar."
+]
+},
+"q5": {
+"o": [
+"Reduce la mortalidad de todos los recién nacidos hipoxémicos",
+"Menos ECMO, no menos mortalidad; 20 ppm con pulmón reclutado",
+"Se inicia a 40–80 ppm y luego se desciende según la respuesta",
+"Mejora los resultados también en la hernia diafragmática congénita"
+],
+"ok": 1,
+"no": [
+"No cambió la mortalidad: el beneficio fue en la necesidad de ECMO.",
+null,
+"La dosis eficaz de inicio es 20 ppm; dosis mayores aumentan la metahemoglobina y el dióxido de nitrógeno.",
+"En la hernia diafragmática no mejoró los resultados."
+]
+},
+"q6": {
+"o": [
+"Es el tratamiento de primera línea según las guías actuales de HTPP",
+"Práctica previa al óxido nítrico, abandonada por sus riesgos",
+"Es correcto si se combina con bicarbonato para el pH",
+"Solo es eficaz y seguro si se hace en VAFO"
+],
+"ok": 1,
+"no": [
+"No es primera línea.",
+null,
+"La alcalinización con bicarbonato tampoco se recomienda.",
+"El problema es la hipocapnia en sí, no el modo."
+]
+},
+"q7": {
+"o": [
+"Subir el óxido nítrico a 80 ppm antes de pensar en ECMO",
+"Contactar a un centro con ECMO: IO > 40 sostenido",
+"Esperar 24 horas más con el tratamiento actual",
+"Suspender el óxido nítrico porque no hubo respuesta"
+],
+"ok": 1,
+"no": [
+"Más dosis no mejora la eficacia y suma toxicidad.",
+null,
+"Esperar con IO > 40 aumenta el riesgo de muerte o daño.",
+"Suspenderlo bruscamente puede causar hipertensión pulmonar de rebote."
+]
+}
+},
+"hdc": {
+"q1": {
+"o": [
+"Ventilar con bolsa y máscara hasta mejorar la saturación",
+"Intubar sin ventilar con máscara y colocar sonda gástrica",
+"CPAP nasal de 6 cmH₂O para no intubar un pulmón hipoplásico",
+"Oxígeno a flujo libre y observar la respuesta 10 minutos"
+],
+"ok": 1,
+"no": [
+"Insufla el intestino herniado y empeora la compresión pulmonar.",
+null,
+"La CPAP nasal también insufla el tubo digestivo.",
+"Es un soporte insuficiente para un pulmón hipoplásico."
+]
+},
+"q2": {
+"o": [
+"SpO₂ preductal > 95 % y pCO₂ 35–45 con PIP ≤ 25",
+"SpO₂ pre 80–95 %, pos > 70 %, pCO₂ 50–70, PIP ≤ 25",
+"SpO₂ posductal > 85 % y pCO₂ < 50 con PEEP 6–8",
+"SpO₂ pre 85–95 %, pos > 80 %, pCO₂ 45–60, PIP ≤ 30"
+],
+"ok": 1,
+"no": [
+"Buscar valores normales exige presiones que lesionan el pulmón hipoplásico.",
+null,
+"La posductal refleja el cortocircuito ductal; perseguirla lleva a presiones excesivas.",
+"Son metas más exigentes y una PIP mayor que las del consenso CDH EURO."
+]
+},
+"q3": {
+"o": [
+"Subir la PIP a 30 para mejorar la SpO₂ posductal",
+"Bajar la PIP a ≤ 25: preductal y pCO₂ están en meta",
+"Subir la FR a 70 para llevar la pCO₂ a 40",
+"Dar bicarbonato para llevar el pH por encima de 7,35"
+],
+"ok": 1,
+"no": [
+"Más presión sobre un pulmón hipoplásico aumenta el riesgo de neumotórax contralateral.",
+null,
+"Buscar normocapnia con más ventilación lesiona el pulmón.",
+"El bicarbonato no está indicado y genera CO₂."
+]
+},
+"q5": {
+"o": [
+"Reduce la mortalidad y la ECMO, igual que en la HTPP",
+"No mejoró los resultados en Cochrane; uso selectivo",
+"Indicado siempre que la SpO₂ posductal sea < 70 %",
+"Reemplaza a la ECMO si se usa a 40 ppm"
+],
+"ok": 1,
+"no": [
+"Ese beneficio no se observó en la hernia diafragmática.",
+null,
+"No hay una indicación sistemática por ese umbral.",
+"No reemplaza la ECMO y no se usa a esa dosis."
+]
+},
+"q6": {
+"o": [
+"pCO₂ de 60 con PIP 25, SpO₂ preductal de 85 % y FiO₂ de 0,60",
+"SpO₂ pre < 85 %, PIP > 28 o MAP > 17, lactato ≥ 5, IO ≥ 40",
+"SpO₂ posductal persistente de 75 % pese a FiO₂ de 1,0",
+"Necesidad de VAFO durante más de 12 horas"
+],
+"ok": 1,
+"no": [
+"Está dentro de las metas.",
+null,
+"Una posductal > 70 % está dentro de las metas.",
+"La VAFO de rescate no es por sí sola un criterio de ECMO."
+]
+},
+"q4": {
+"o": [
+"VAFO de entrada en todos los casos de hernia",
+"Convencional inicial; VAFO como rescate",
+"Ventilación jet de entrada para minimizar presiones",
+"CPAP inicial y ventilación solo si fracasa"
+],
+"ok": 1,
+"no": [
+"No se recomienda como modo inicial de rutina.",
+null,
+"No es el modo inicial recomendado.",
+"Es insuficiente para un pulmón hipoplásico y la CPAP distiende el intestino."
+]
+}
+},
+"termino": {
+"q1": {
+"o": [
+"Déficit de surfactante por inmadurez pulmonar relativa",
+"Retraso en la reabsorción del líquido pulmonar",
+"Aspiración de líquido amniótico claro en la cesárea",
+"Hipertensión pulmonar transitoria por cesárea electiva"
+],
+"ok": 1,
+"no": [
+"Es el mecanismo del SDR del prematuro.",
+null,
+"La aspiración de líquido claro no explica el cuadro ni la radiografía.",
+"La radiografía y la evolución no sugieren hipertensión pulmonar."
+]
+},
+"q2": {
+"o": [
+"Furosemida para acelerar la eliminación del líquido",
+"CPAP si hace falta y oxígeno según metas",
+"Salbutamol inhalado para activar la reabsorción de sodio",
+"Restricción hídrica a 40 mL/kg/día hasta las 72 horas"
+],
+"ok": 1,
+"no": [
+"No hay evidencia que respalde su uso en la TTN.",
+null,
+"No se recomienda como tratamiento estándar de la TTN.",
+"No es parte del manejo estándar."
+]
+},
+"q3": {
+"o": [
+"Empeoramiento de la TTN: subir la CPAP a 8",
+"Neumotórax: drenar si hay inestabilidad",
+"Neumonía: antibióticos sin cambiar el soporte",
+"Cardiopatía ductus dependiente: prostaglandinas"
+],
+"ok": 1,
+"no": [
+"Subir la CPAP puede agrandar un neumotórax.",
+null,
+"Los signos son de fuga aérea.",
+"La asimetría y la transiluminación apuntan al pulmón."
+]
+},
+"q4": {
+"o": [
+"Taquipnea y quejido desde las primeras horas de vida",
+"Empeoramiento tardío con fiebre, neutropenia y PCR alta",
+"Líquido en la cisura y trazos perihiliares en la radiografía",
+"Antecedente de cesárea sin trabajo de parto"
+],
+"ok": 1,
+"no": [
+"Es común a ambas.",
+null,
+"Es típico de la TTN.",
+"Es un factor de riesgo de TTN."
+]
+}
+},
+"dbp": {
+"q2": {
+"o": [
+"Mantener VT 5, FR 40 y Ti 0,35 como en el SDR",
+"VT mayor, FR baja, Ti largo y PEEP más alta",
+"VAFO a 15 Hz para reducir el VT y el volutrauma",
+"Bajar la PEEP a 4 para reducir la hiperinsuflación"
+],
+"ok": 1,
+"no": [
+"Es la estrategia del pulmón agudo homogéneo, no la de la displasia.",
+null,
+"La VAFO a frecuencias altas no se adapta a constantes de tiempo largas.",
+"Con malacia, menos PEEP aumenta el colapso espiratorio."
+]
+},
+"q3": {
+"o": [
+"Subir la FR a 60 para normalizar la pCO₂ a 45",
+"Compensada: guiarse por pH, trabajo y crecimiento",
+"Acetazolamida para corregir la retención renal de HCO₃⁻",
+"Bajar el VT para reducir el volutrauma crónico"
+],
+"ok": 1,
+"no": [
+"Más FR empeora el atrapamiento y la lesión.",
+null,
+"No está indicada como tratamiento de rutina.",
+"Bajar el VT aumenta la proporción de espacio muerto."
+]
+},
+"q4": {
+"o": [
+"No buscarla hasta el alta: el tratamiento no cambia",
+"Ecocardiograma y, si hay HTP, SpO₂ 92–95 %",
+"Ecocardiograma y, si hay HTP, SpO₂ 88–92 %",
+"Óxido nítrico de rutina en toda DBP grado 3"
+],
+"ok": 1,
+"no": [
+"La hipertensión pulmonar en la displasia aumenta la mortalidad: hay que buscarla.",
+null,
+"Una saturación tan baja favorece la vasoconstricción pulmonar; la guía propone 92–95 %.",
+"No hay indicación de óxido nítrico de rutina."
+]
+}
+},
+"shci": {
+"q2": {
+"o": [
+"Subir la FiO₂ para llevar la saturación a 95–100 %",
+"Evitar oxígeno e hipocapnia; aceptar saturación menor",
+"Hiperventilar para bajar la pCO₂ y mejorar el pH",
+"Subir la PEEP a 10 para elevar la resistencia pulmonar"
+],
+"ok": 1,
+"no": [
+"Empeora el hiperflujo pulmonar.",
+null,
+"La hipocapnia baja la resistencia pulmonar y empeora el robo.",
+"Una PEEP alta afecta el retorno venoso sin equilibrar las circulaciones de forma controlada."
+]
+},
+"q3": {
+"o": [
+"Que la hipoxia inspirada mejoró más la oxigenación cerebral",
+"Ambas bajaron Qp:Qs; solo el CO₂ mejoró la SatO₂ cerebral",
+"Que ninguna estrategia modificó la relación Qp:Qs",
+"Que el oxígeno al 100 % mejoró la presión arterial"
+],
+"ok": 1,
+"no": [
+"Es al revés.",
+null,
+"Ambas bajaron la Qp:Qs.",
+"No se estudió y no tiene sentido fisiológico."
+]
+},
+"q4": {
+"o": [
+"Subir la FR a 60 para mejorar la ventilación",
+"Bajar el volumen minuto y mantener aire ambiente",
+"Subir la FiO₂ a 0,50 para mejorar la perfusión periférica",
+"Pasar a VAFO para controlar mejor la pCO₂"
+],
+"ok": 1,
+"no": [
+"Bajaría más la pCO₂.",
+null,
+"Empeoraría el hiperflujo pulmonar.",
+"No hay una indicación pulmonar para VAFO."
+]
+}
+}
+}

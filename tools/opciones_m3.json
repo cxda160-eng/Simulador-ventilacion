@@ -1,0 +1,216 @@
+{
+"vafo900": {
+"q1": {
+"o": [
+"La VAFO electiva reduce la mortalidad, por eso debió usarse desde el inicio",
+"Rescate razonable, evidencia débil; la electiva no cambió la mortalidad",
+"Contraindicada en < 1000 g por un riesgo de HIV demostrado en ensayos",
+"Sirve solo para el CO₂: la oxigenación se maneja con la FiO₂"
+],
+"ok": 1,
+"no": [
+"En la revisión de Cools la VAFO electiva no cambió la mortalidad.",
+null,
+"No hay contraindicación por peso: se usa en prematuros extremos.",
+"La oxigenación en VAFO depende sobre todo de la MAP."
+]
+},
+"q2": {
+"o": [
+"MAP igual a la convencional, sin cambios hasta los gases",
+"Subir la MAP en pasos guiados por la SpO₂; luego cierre + 2",
+"MAP de 20 desde el inicio para abrir todo y luego bajar de a 1",
+"Bajar la MAP 2 cmH₂O y compensar la hipoxemia con FiO₂"
+],
+"ok": 1,
+"no": [
+"Sin reclutamiento, la VAFO sobre un pulmón colapsado pierde su ventaja.",
+null,
+"Empezar con presiones muy altas expone a sobredistensión, caída del gasto y fuga aérea.",
+"La FiO₂ no corrige el cortocircuito de un pulmón colapsado."
+]
+},
+"q3": {
+"o": [
+"Subir la MAP: todavía hay vidrio esmerilado en las bases",
+"Bajar la MAP: sobredistensión con repercusión hemodinámica",
+"Subir la amplitud para mejorar la ventilación y la PA",
+"Bolo de volumen y mantener la MAP porque el pulmón está óptimo"
+],
+"ok": 1,
+"no": [
+"Diez espacios con diafragmas planos indican sobredistensión: más MAP empeoraría la hemodinamia.",
+null,
+"La amplitud no corrige el volumen pulmonar ni la causa de la hipotensión.",
+"El volumen puede ayudar, pero el pulmón no está óptimo: está sobredistendido."
+]
+},
+"q4": {
+"o": [
+"Subir la frecuencia de 15 a 18 Hz",
+"Subir el VThf de 1,2 a 1,5 mL/kg",
+"Subir la MAP de 12 a 14 cmH₂O",
+"Subir la FiO₂ de 0,30 a 0,40"
+],
+"ok": 1,
+"no": [
+"A amplitud fija, más frecuencia acorta cada ciclo y reduce el VT: el DCO₂ suele bajar.",
+null,
+"La MAP regula el volumen pulmonar; subirla puede sobredistender y aumentar el espacio muerto.",
+"La FiO₂ no modifica la eliminación de CO₂."
+]
+},
+"q5": {
+"o": [
+"Subir la amplitud máxima programada a 60 cmH₂O",
+"Bajar la frecuencia (por ejemplo a 15 Hz o menos)",
+"Subir la MAP para mejorar la transmisión de la onda",
+"Pasar a I:E 1:1 manteniendo los 18 Hz"
+],
+"ok": 1,
+"no": [
+"Si el equipo ya no genera más amplitud efectiva a esa frecuencia, subir el límite no cambia lo que llega.",
+null,
+"La MAP no resuelve la limitación de volumen a frecuencias altas.",
+"El 1:1 puede aumentar algo el volumen, pero a 18 Hz acorta la espiración y favorece el atrapamiento; la solución más directa es bajar la frecuencia."
+]
+},
+"q6": {
+"o": [
+"Porque sube la MAP alveolar y mejora la oxigenación",
+"Porque alarga la espiración y reduce el atrapamiento",
+"Porque es la única relación disponible en los osciladores",
+"Porque aumenta el VThf entregado a igual amplitud"
+],
+"ok": 1,
+"no": [
+"Subir la presión alveolar por atrapamiento es un efecto adverso, no un objetivo.",
+null,
+"Muchos equipos permiten cambiarla.",
+"Es al revés: el 1:1 entrega algo más de volumen; el 1:2 lo reduce a cambio de menos atrapamiento."
+]
+},
+"q7": {
+"o": [
+"Primero la MAP a 8 de una vez y después la FiO₂",
+"Primero la FiO₂ a ~0,30; luego la MAP de a 1 cmH₂O",
+"Primero la frecuencia hasta 6 Hz para pasar a convencional",
+"Primero el VThf hasta 0,8 mL/kg para que respire solo"
+],
+"ok": 1,
+"no": [
+"Un descenso brusco de la MAP colapsa el pulmón y, por histéresis, cuesta volver a abrirlo.",
+null,
+"La frecuencia no es el parámetro principal del destete.",
+"Un VThf tan bajo produce hipercapnia."
+]
+},
+"q8": {
+"o": [
+"Tubo obstruido: aspirar y esperar la respuesta",
+"Neumotórax a tensión: punción con aguja y drenaje",
+"Derreclutamiento: subir la MAP a 18 y reclutar de nuevo",
+"Hipovolemia: bolo de 10 mL/kg y reevaluar"
+],
+"ok": 1,
+"no": [
+"Un tubo obstruido no produce transiluminación ni vibración asimétricas.",
+null,
+"Subir la MAP agravaría un neumotórax.",
+"La hipotensión es obstructiva: el volumen no resuelve la causa."
+]
+}
+},
+"pie": {
+"q1": {
+"o": [
+"Aire en el espacio pleural que colapsa el pulmón",
+"Aire en el intersticio que comprime vías y vasos",
+"Hiperinsuflación por atrapamiento sin rotura alveolar",
+"Neumonía necrotizante con neumatoceles múltiples"
+],
+"ok": 1,
+"no": [
+"Eso es un neumotórax.",
+null,
+"Las lucencias no siguen el árbol bronquial: hay aire fuera de las vías aéreas.",
+"No hay datos de infección y el patrón es típico de fuga aérea."
+]
+},
+"q2": {
+"o": [
+"Subir el VT a 7 mL/kg para mejorar la ventilación",
+"Bajar presiones y Ti aceptando gases permisivos",
+"Subir la PEEP a 10 para estabilizar los alvéolos",
+"Sedación y relajación manteniendo los parámetros"
+],
+"ok": 1,
+"no": [
+"Más volumen aumenta la fuga.",
+null,
+"Más PEEP aumenta la presión media y alimenta la fuga.",
+"La sedación sola no cambia el mecanismo."
+]
+},
+"q3": {
+"o": [
+"Que la jet aumentó la mortalidad frente a la convencional",
+"Resolución más rápida del enfisema con presiones menores",
+"Que no hubo diferencias en ningún resultado clínico",
+"Que la jet solo fue útil en recién nacidos de término"
+],
+"ok": 1,
+"no": [
+"No mostró aumento de la mortalidad.",
+null,
+"Hubo diferencias en la resolución radiológica y en las presiones necesarias.",
+"Incluyó prematuros."
+]
+},
+"q4": {
+"o": [
+"15 Hz con MAP alta para reclutar las zonas sanas",
+"5–6 Hz y Ti 30 %, con menor MAP (serie retrospectiva)",
+"20 Hz para reducir al mínimo el VT entregado por ciclo",
+"Pulmón abierto igual que en el SDR, con MAP de cierre + 2"
+],
+"ok": 1,
+"no": [
+"La MAP alta alimenta la fuga.",
+null,
+"Una frecuencia tan alta acorta la espiración y favorece el atrapamiento.",
+"En la fuga aérea el objetivo es reducir la presión, no reclutar."
+]
+},
+"q5": {
+"o": [
+"Drenaje pleural del lado afectado para evacuar el aire",
+"Decúbito del lado afectado o intubar el bronquio sano",
+"Subir la PEEP para comprimir el aire intersticial",
+"Corticoides inhalados para reducir la inflamación local"
+],
+"ok": 1,
+"no": [
+"No hay aire en la pleura: el drenaje no saca el aire intersticial.",
+null,
+"Más PEEP alimenta la fuga.",
+"No hay evidencia de beneficio."
+]
+},
+"q6": {
+"o": [
+"La jet tiene espiración activa y la VAFO pasiva",
+"En la jet es pasiva; en la VAFO es activa",
+"Ambas tienen espiración pasiva por retracción elástica",
+"Ambas tienen espiración activa generada por el equipo"
+],
+"ok": 1,
+"no": [
+"Es al revés.",
+null,
+"La VAFO tiene espiración activa.",
+"La jet tiene espiración pasiva."
+]
+}
+}
+}

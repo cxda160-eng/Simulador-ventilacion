@@ -5,7 +5,7 @@
 const E=window.EVAL;if(!E)return;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const MODS={1:'Ventilación no invasiva',2:'Ventilación convencional',3:'Alta frecuencia',4:'Mecánica respiratoria',5:'Gases en sangre',6:'Patologías',7:'Prematuro extremo'};
+const MODS={1:'Ventilación no invasiva',2:'Ventilación convencional',3:'Alta frecuencia',4:'Mecánica respiratoria',5:'Gases en sangre',6:'Patologías',7:'Prematuro extremo',8:'Hemodinamia e inotrópicos'};
 const NIV={basico:'Básico',intermedio:'Intermedio',avanzado:'Avanzado',experto:'Experto'};
 const EVL={F:['Evidencia fuerte','Ensayos aleatorizados o metaanálisis, o guías basadas en ellos.'],E:['Consenso o expertos','Recomendación de guías o expertos basada en fisiología y estudios observacionales.'],I:['Práctica institucional','Los valores o umbrales varían entre unidades: seguir el protocolo local.'],C:['Controversia','Evidencia insuficiente o contradictoria; decisión individual.']};
 const LS='simvent_eval_v1';

@@ -1,0 +1,509 @@
+{
+"ep23": {
+"q1": {
+"o": [
+"Redujo displasia o muerte; se recomienda en < 27 semanas",
+"No redujo displasia o muerte y hubo más muertes en 48 h",
+"Redujo la intubación en sala de partos sin efectos adversos",
+"Fue útil solo en < 25 semanas, donde redujo la muerte"
+],
+"ok": 1,
+"no": [
+"No redujo la displasia o muerte.",
+null,
+"No se demostró ese beneficio y hubo más muertes precoces.",
+"Los efectos adversos preocuparon justamente en los más pequeños."
+]
+},
+"q2": {
+"o": [
+"6,5 cm, por la regla «6 + peso en kg»",
+"≈ 5,5 cm según la tabla por edad gestacional",
+"≈ 6,0 cm, la profundidad de las 25–26 semanas",
+"≈ 4,5 cm, para evitar la intubación selectiva"
+],
+"ok": 1,
+"no": [
+"En < 750 g la regla del peso tiende a dejar el tubo demasiado profundo.",
+null,
+"Corresponde a una edad gestacional mayor: a las 23 semanas quedaría profundo.",
+"Demasiado superficial: riesgo de extubación."
+]
+},
+"q3": {
+"o": [
+"4 mL/kg (2,2 mL), como en los prematuros más grandes",
+"5–6 mL/kg (≈ 3 mL) y ajustar por la pCO₂",
+"8 mL/kg para compensar todo el espacio muerto del sensor",
+"Sin VG ni sensor: presión limitada con PIP según el tórax"
+],
+"ok": 1,
+"no": [
+"Con 2,2 mL el VT es menor que el espacio muerto instrumental: suele producir hipercapnia.",
+null,
+"Compensar todo el espacio muerto expone a volutrauma.",
+"El estudio muestra que el VG funciona en estos pesos."
+]
+},
+"q4": {
+"o": [
+"Sí: el PLUSS mostró más supervivencia sin displasia",
+"No de rutina: el PLUSS mostró poco o ningún efecto",
+"Sí, pero solo administrada por catéter fino (LISA)",
+"Sí, a 1 mg/kg para lograr un efecto antiinflamatorio mayor"
+],
+"ok": 1,
+"no": [
+"La diferencia no fue significativa.",
+null,
+"El PLUSS incluyó administración por tubo o catéter fino, sin un beneficio que justifique esa conclusión.",
+"La dosis estudiada fue 0,25 mg/kg y no mostró beneficio claro: no hay base para usar más."
+]
+},
+"q5": {
+"o": [
+"Solo la hipocapnia se asoció a HIV grave",
+"Extremos y fluctuaciones se asociaron a HIV grave",
+"Solo el promedio de pCO₂ de los primeros días predijo HIV",
+"Conviene mantener la pCO₂ en 30–35 para proteger"
+],
+"ok": 1,
+"no": [
+"También la hipercapnia y las fluctuaciones se asociaron.",
+null,
+"El promedio ponderado fue el que peor predijo.",
+"Una pCO₂ de 30–35 es hipocapnia, asociada a leucomalacia."
+]
+},
+"q6": {
+"o": [
+"Fatiga diafragmática: pasar a SIMV con PS",
+"Más espacio muerto (traqueomegalia): subir el VT",
+"Más demanda metabólica: subir la FR a 70",
+"Neumonía asociada: cambiar antibióticos y mantener VT"
+],
+"ok": 1,
+"no": [
+"La SIMV con frecuencia baja empeoraría la carga por el espacio muerto.",
+null,
+"Más FR con VT insuficiente ventila sobre todo el espacio muerto.",
+"Nada indica infección; el patrón coincide con lo descrito por Keszler."
+]
+},
+"q7": {
+"o": [
+"Hidrocortisona días 14–28: más supervivencia sin displasia",
+"DART facilita extubar; hidrocortisona tardía sin beneficio",
+"Ningún corticoide facilitó la extubación en ensayos",
+"Budesonida tardía con surfactante: tratamiento estándar"
+],
+"ok": 1,
+"no": [
+"La diferencia no fue significativa.",
+null,
+"La dexametasona en dosis baja sí facilitó la extubación.",
+"No hay evidencia para ese uso."
+]
+}
+},
+"hp24": {
+"q1": {
+"o": [
+"Trauma de la mucosa por aspiraciones repetidas",
+"Edema hemorrágico por más flujo pulmonar ductal",
+"Infección por gérmenes productores de hemolisinas",
+"Coagulopatía primaria sin cambios hemodinámicos"
+],
+"ok": 1,
+"no": [
+"La aspiración puede lesionar la mucosa, pero no explica un sangrado difuso.",
+null,
+"La infección es un factor posible, no el mecanismo principal.",
+"La coagulopatía favorece el sangrado, pero la diastólica baja y los pulsos saltones indican un cambio hemodinámico."
+]
+},
+"q2": {
+"o": [
+"Aspirar hasta que no salga sangre por el tubo",
+"Subir PEEP/MAP y dar margen a la Pmax",
+"Bajar la PEEP para mejorar el retorno venoso",
+"Bajar el VT a 4 para no aumentar la presión"
+],
+"ok": 1,
+"no": [
+"Cada aspiración despresuriza la vía aérea y puede reactivar el sangrado.",
+null,
+"Menos PEEP empeora el edema y el colapso.",
+"Con la compliance caída, bajar el VT agrava la hipoventilación."
+]
+},
+"q3": {
+"o": [
+"Porque la VAFO ayuda a cerrar el ductus al subir la MAP",
+"MAP alta y estable con VT mínimo; base observacional",
+"Porque redujo la mortalidad en ensayos aleatorizados",
+"Porque permite bajar la FiO₂ a 0,21 de inmediato"
+],
+"ok": 1,
+"no": [
+"No actúa sobre el ductus.",
+null,
+"No hay ensayos que lo demuestren.",
+"La mejoría es gradual."
+]
+},
+"q4": {
+"o": [
+"Reduce la mortalidad a la mitad en ensayos",
+"Sin ensayos aleatorizados; decisión individual",
+"Está contraindicado por el riesgo de resangrado",
+"Solo hay evidencia en recién nacidos de término"
+],
+"ok": 1,
+"no": [
+"No hay ensayos que lo muestren.",
+null,
+"No hay evidencia de que esté contraindicado.",
+"Los reportes incluyen prematuros."
+]
+},
+"q5": {
+"o": [
+"Nada más: es un problema exclusivamente pulmonar",
+"Ductus, coagulopatía y balance hídrico",
+"Expansión con 20 mL/kg para sostener la PA",
+"Óxido nítrico para bajar la presión pulmonar"
+],
+"ok": 1,
+"no": [
+"Ignora el mecanismo.",
+null,
+"La sobrecarga de volumen empeora el edema.",
+"No hay indicación de vasodilatador pulmonar: el problema es el hiperflujo."
+]
+},
+"q6": {
+"o": [
+"Fuga alrededor del tubo: revisar la fijación",
+"Obstrucción del tubo: aspirar o cambiarlo",
+"Autociclado por agua en el circuito",
+"Sobredistensión: bajar la PEEP de inmediato"
+],
+"ok": 1,
+"no": [
+"Sin fuga, no puede ser una fuga.",
+null,
+"No hay ciclos sin esfuerzo.",
+"La sobredistensión no corta el flujo inspiratorio de esa manera."
+]
+}
+},
+"hfo24": {
+"q1": {
+"o": [
+"≈ 1,6 mL/kg",
+"≈ 2,0 mL/kg",
+"≈ 2,4 mL/kg",
+"≈ 1,1 mL/kg"
+],
+"ok": 1,
+"no": [
+"Con 1,6 a 10 Hz el DCO₂ caería un tercio.",
+null,
+"Excede lo necesario (DCO₂ ≈ 58).",
+"Reduciría mucho el DCO₂."
+]
+},
+"q2": {
+"o": [
+"Subir la MAP a 16 para recuperar volumen",
+"Punción con aguja y después drenaje",
+"Esperar la radiografía antes de punzar",
+"Subir la amplitud para recuperar el VThf"
+],
+"ok": 1,
+"no": [
+"Agravaría la fuga y la hemodinamia.",
+null,
+"Esperar con un bebé inestable puede costar la vida.",
+"Más amplitud no corrige el aire pleural."
+]
+},
+"q3": {
+"o": [
+"Subir la MAP para mantener el reclutamiento",
+"MAP mínima con oxigenación aceptable",
+"Pasar a convencional con PIP 30 y Ti corto",
+"Sedación profunda sin cambiar parámetros"
+],
+"ok": 1,
+"no": [
+"Aumentaría la fuga por la fístula.",
+null,
+"Las presiones pico altas empeoran la fuga.",
+"No corrige el mecanismo."
+]
+},
+"q4": {
+"o": [
+"Reduce muerte y displasia, como en el término",
+"Sin efecto en muerte o DBP; no de rutina",
+"Indicado siempre que la FiO₂ supere 0,60",
+"Reduce la HIV grave en el rescate temprano"
+],
+"ok": 1,
+"no": [
+"El beneficio del término no se reproduce en el prematuro.",
+null,
+"No hay un umbral de FiO₂ que lo indique en el prematuro.",
+"No la reduce: la tendencia fue a aumentarla."
+]
+},
+"q5": {
+"o": [
+"Nada: si la FiO₂ es alta, se inicia directamente",
+"Reclutamiento, eco y causas tratables",
+"Que la pCO₂ esté por debajo de 35 mmHg",
+"Que el ductus esté cerrado por ecografía"
+],
+"ok": 1,
+"no": [
+"La FiO₂ alta no distingue el mecanismo.",
+null,
+"La hipocapnia no es un requisito y es perjudicial.",
+"El ductus puede ser una vía de descarga del ventrículo derecho."
+]
+},
+"q6": {
+"o": [
+"Siempre pasar a convencional antes de extubar",
+"Ambas estrategias; seguir el protocolo local",
+"Contraindicado extubar desde VAFO",
+"Bajar la MAP a 4 antes de extubar"
+],
+"ok": 1,
+"no": [
+"No es obligatorio.",
+null,
+"No está contraindicado.",
+"Es una MAP demasiado baja para un prematuro extremo: perdería volumen pulmonar."
+]
+}
+},
+"dbp25": {
+"q1": {
+"o": [
+"Bajar a 4 mL/kg para proteger el pulmón",
+"Subir de a poco a ~6 mL/kg y reevaluar",
+"Mantener 5 mL/kg y subir la FR a 70",
+"Pasar a SIMV 20 con presión de soporte 5"
+],
+"ok": 1,
+"no": [
+"Aumentaría la proporción de espacio muerto.",
+null,
+"Ventilaría sobre todo el espacio muerto y acortaría el Te.",
+"Con soporte mínimo, las espontáneas por el tubo siguen fatigando."
+]
+},
+"q2": {
+"o": [
+"No cambió la extubación frente a placebo",
+"60 % frente a 12 % extubados a los 10 días",
+"Redujo claramente la mortalidad a las 36 semanas",
+"Causó perforación intestinal en el 10 % de los casos"
+],
+"ok": 1,
+"no": [
+"Sí cambió la extubación.",
+null,
+"No hubo una reducción clara de la mortalidad.",
+"No hubo perforaciones intestinales."
+]
+},
+"q3": {
+"o": [
+"Aumentó la supervivencia sin displasia (p < 0,01)",
+"16,6 % frente a 13,2 %, sin significación",
+"Aumentó la discapacidad moderada o grave a 2 años",
+"Se suspendió precozmente por hiperglucemia grave"
+],
+"ok": 1,
+"no": [
+"La diferencia no fue significativa.",
+null,
+"No hubo diferencias en el neurodesarrollo.",
+"No se suspendió por ese motivo."
+]
+},
+"q4": {
+"o": [
+"Budesonida con surfactante en las primeras 48 h (PLUSS)",
+"Óxido nítrico tardío según el riesgo de displasia",
+"Ninguna de las dos mostró un beneficio claro",
+"Ambas mostraron un beneficio claro y significativo"
+],
+"ok": 2,
+"no": [
+"El PLUSS no mostró un aumento significativo de la supervivencia sin displasia.",
+"El efecto fue pequeño (RR 0,92) y no significativo.",
+null,
+"Ninguna mostró un beneficio claro."
+]
+}
+},
+"ext24": {
+"q1": {
+"o": [
+"Porque la SIMV no aplica PEEP durante las espontáneas",
+"Espacio muerto instrumental en espontáneas sin soporte",
+"Porque la SIMV produce hipocapnia y alcalosis",
+"Porque la SIMV aumenta la fuga alrededor del tubo"
+],
+"ok": 1,
+"no": [
+"La SIMV tiene PEEP.",
+null,
+"Tiende a la hipercapnia, no a la hipocapnia.",
+"La fuga no depende del modo."
+]
+},
+"q2": {
+"o": [
+"PIP ≤ 10 cmH₂O está validada como umbral universal",
+"No hay umbral universal; se combinan criterios",
+"Extubar al llegar a 1000 g de peso",
+"Prueba de 2 horas en CPAP endotraqueal"
+],
+"ok": 1,
+"no": [
+"No existe tal umbral validado.",
+null,
+"El peso no es un criterio.",
+"Respirar 2 horas por un tubo de 2,5 mm sin soporte es agotador."
+]
+},
+"q2b": {
+"o": [
+"Entrena el diafragma y facilita la extubación",
+"Sube pCO₂ y trabajo: el VG ya desteta la PIP",
+"No cambia la ventilación alveolar",
+"Reduce el espacio muerto instrumental"
+],
+"ok": 1,
+"no": [
+"No hay evidencia de que entrene el diafragma; sí aumenta la carga.",
+null,
+"Cambia la ventilación alveolar.",
+"El espacio muerto instrumental es fijo."
+]
+},
+"q3": {
+"o": [
+"La CPAP fue superior a la NIPPV y también a la VAFO nasal",
+"Menos reintubación con VAFO nasal y NIPPV; ≥ 25 sem",
+"La VAFO nasal tuvo más eventos adversos",
+"No hubo diferencias entre los tres soportes"
+],
+"ok": 1,
+"no": [
+"La CPAP tuvo más reintubaciones.",
+null,
+"Los tres soportes fueron igual de seguros.",
+"Hubo diferencias."
+]
+},
+"q4": {
+"o": [
+"Reintubar de inmediato por fracaso del soporte",
+"Sonda orogástrica abierta y descartar enterocolitis",
+"Bajar la PEEP a 3 para reducir la aerofagia",
+"Suspender la cafeína porque aumenta la distensión gástrica"
+],
+"ok": 1,
+"no": [
+"Antes hay que corregir una causa mecánica simple.",
+null,
+"La PEEP baja hace perder volumen pulmonar.",
+"La cafeína ayuda a prevenir las pausas."
+]
+},
+"q5": {
+"o": [
+"Reintentar la extubación en 6 horas sin cambios",
+"Corregir causas y considerar dexametasona baja",
+"Mantener intubado hasta las 36 semanas",
+"SIMV de frecuencia baja para fortalecerlo"
+],
+"ok": 1,
+"no": [
+"Repetir sin cambios suele repetir el fracaso.",
+null,
+"La ventilación prolongada es un factor de riesgo de displasia.",
+"La SIMV con frecuencia baja suma la carga del espacio muerto."
+]
+}
+},
+"nec24": {
+"q1": {
+"o": [
+"Empeoró el pulmón por una neumonía asociada",
+"Menor compliance de la pared por el abdomen",
+"Fuga alrededor del tubo por la reintubación",
+"Mayor resistencia por broncoespasmo séptico"
+],
+"ok": 1,
+"no": [
+"El pulmón puede estar igual; cambió la pared.",
+null,
+"Con fuga caería el VT espirado, no subiría tanto la PIP.",
+"El broncoespasmo no explica la elevación diafragmática ni la radiografía."
+]
+},
+"q2": {
+"o": [
+"Bajar el VT a 3 mL/kg para no subir la presión",
+"Margen en la Pmax, PEEP +1–2 y descomprimir",
+"Presión limitada con PIP 15 para proteger",
+"Bajar la PEEP para reducir la presión abdominal"
+],
+"ok": 1,
+"no": [
+"Un VT tan bajo produce hipercapnia y atelectasias.",
+null,
+"Una PIP de 15 no alcanzaría para ventilar.",
+"Empeoraría el colapso basal."
+]
+},
+"q2b": {
+"o": [
+"Acidosis respiratoria pura por la mecánica",
+"Mixta: el HCO₃⁻ esperado sería ≈ 26",
+"Metabólica con compensación respiratoria",
+"Gases aceptables para un prematuro séptico"
+],
+"ok": 1,
+"no": [
+"El HCO₃⁻ es menor que el esperado.",
+null,
+"La pCO₂ está alta, no compensa.",
+"Un pH de 7,16 no es aceptable."
+]
+},
+"q3": {
+"o": [
+"Óxido nítrico de rutina si la FiO₂ supera 0,60",
+"Reclutar, inotrópicos, sepsis; ONi individual",
+"Óxido nítrico contraindicado en el prematuro",
+"Hiperventilar hasta pCO₂ 30 para vasodilatar"
+],
+"ok": 1,
+"no": [
+"No hay base para un uso rutinario.",
+null,
+"No está contraindicado; no está indicado de rutina.",
+"La hipocapnia reduce el flujo cerebral y no se recomienda."
+]
+}
+}
+}
